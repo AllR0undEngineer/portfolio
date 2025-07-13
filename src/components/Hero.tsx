@@ -157,19 +157,19 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
           {/* Left Content */}
           <div className="text-center lg:text-left space-y-8">
             <div className="space-y-4">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight">
                 <span className={`block ${darkMode ? 'text-white' : 'text-gray-900'}`}>Hi, I'm</span>
                 <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
                   Priyansh Chandwani
                 </span>
               </h1>
-              <div className={`text-2xl sm:text-3xl lg:text-4xl font-bold ${darkMode ? 'text-gray-300' : 'text-gray-800'} h-16 flex items-center justify-center lg:justify-start`}>
+              <div className={`text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold ${darkMode ? 'text-gray-300' : 'text-gray-800'} h-12 sm:h-14 md:h-16 flex items-center justify-center lg:justify-start`}>
                 <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
                   {typedText}
                 </span>
-                <span className="ml-1 w-1 h-8 bg-gradient-to-r from-orange-500 to-red-500 animate-pulse"></span>
+                <span className="ml-1 w-0.5 sm:w-1 h-6 sm:h-7 md:h-8 bg-gradient-to-r from-orange-500 to-red-500 animate-pulse"></span>
               </div>
-              <p className={`text-xl ${darkMode ? 'text-gray-400' : 'text-gray-700'} max-w-2xl mx-auto lg:mx-0`}>
+              <p className={`text-base sm:text-lg md:text-xl ${darkMode ? 'text-gray-400' : 'text-gray-700'} max-w-2xl mx-auto lg:mx-0 px-4 lg:px-0`}>
                 Passionate about building scalable ML pipelines, creating innovative web applications, 
                 and implementing cutting-edge AI solutions.
               </p>
@@ -178,13 +178,13 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button
                 onClick={scrollToProjects}
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
               >
                 View Projects
               </button>
               <button
                 onClick={scrollToContact}
-                className={`px-8 py-4 border-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
+                className={`px-6 sm:px-8 py-3 sm:py-4 border-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 text-sm sm:text-base ${
                   darkMode 
                     ? 'border-gray-600 text-gray-300 hover:border-gray-400 hover:text-white' 
                     : 'border-gray-400 text-gray-800 hover:border-gray-600 hover:text-gray-900'
@@ -197,11 +197,11 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
 
           {/* Right Content - Interactive Globe */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-96 h-96">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
               {/* Globe Container */}
               <div className="relative w-full h-full">
                 {/* Main Globe */}
-                <div className={`absolute inset-8 rounded-full border-4 ${
+                <div className={`absolute inset-4 sm:inset-6 md:inset-8 rounded-full border-2 sm:border-3 md:border-4 ${
                   darkMode 
                     ? 'border-blue-400/30 bg-gradient-to-br from-blue-900/20 to-purple-900/20' 
                     : 'border-blue-500/30 bg-gradient-to-br from-blue-100/50 to-purple-100/50'
@@ -240,7 +240,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                   {/* Center Logo */}
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div 
-                      className={`w-20 h-20 rounded-full p-2 flex items-center justify-center animate-pulse shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300 ${
+                      className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full p-1 sm:p-1.5 md:p-2 flex items-center justify-center animate-pulse shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300 ${
                         darkMode 
                           ? 'bg-gradient-to-r from-blue-600 to-purple-600' 
                           : 'bg-gradient-to-r from-blue-500 to-purple-500'
@@ -265,28 +265,32 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                   <div
                     key={point.id}
                     className="absolute cursor-pointer group z-10"
-                    style={getPointPosition(point.angle, point.radius)}
+                    style={getPointPosition(point.angle, window.innerWidth < 640 ? 80 : window.innerWidth < 768 ? 110 : point.radius)}
                     onClick={() => scrollToSection(point.id)}
                     onMouseEnter={() => setHoveredPoint(point.id)}
                     onMouseLeave={() => setHoveredPoint(null)}
                   >
                     <div 
-                      className={`w-12 h-12 rounded-full bg-gradient-to-r ${point.color} flex items-center justify-center text-white shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:shadow-xl transform hover:rotate-12`}
+                      className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-r ${point.color} flex items-center justify-center text-white shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:shadow-xl transform hover:rotate-12`}
                       style={{
                         animation: `float 3s ease-in-out infinite`,
                         animationDelay: `${index * 0.5}s`
                       }}
                     >
-                      {point.icon}
+                      <div className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5">
+                        {React.cloneElement(point.icon as React.ReactElement, { 
+                          className: "w-full h-full" 
+                        })}
+                      </div>
                     </div>
                     
                     {/* Label */}
-                    <div className={`absolute -bottom-12 left-1/2 transform -translate-x-1/2 transition-all duration-300 ${
+                    <div className={`absolute -bottom-8 sm:-bottom-10 md:-bottom-12 left-1/2 transform -translate-x-1/2 transition-all duration-300 ${
                       hoveredPoint === point.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                     }`}>
-                      <div className={`px-3 py-2 rounded-lg ${
+                      <div className={`px-2 py-1 sm:px-3 sm:py-2 rounded-lg ${
                         darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'
-                      } shadow-lg text-sm font-semibold whitespace-nowrap border ${
+                      } shadow-lg text-xs sm:text-sm font-semibold whitespace-nowrap border ${
                         darkMode ? 'border-gray-700' : 'border-gray-200'
                       }`}>
                         {point.label}
@@ -324,7 +328,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
 
               {/* Interactive Instruction */}
               <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
-                <p className={`text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-600'} text-center animate-bounce`}>
+                <p className={`text-xs sm:text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-600'} text-center animate-bounce`}>
                   Click points to navigate
                 </p>
               </div>
@@ -336,10 +340,10 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="flex flex-col items-center space-y-2">
-          <span className={`text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-700'}`}>
+          <span className={`text-xs sm:text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-700'}`}>
             Explore
           </span>
-          <ChevronDown className={`w-8 h-8 ${darkMode ? 'text-gray-400' : 'text-gray-700'}`} />
+          <ChevronDown className={`w-6 h-6 sm:w-8 sm:h-8 ${darkMode ? 'text-gray-400' : 'text-gray-700'}`} />
         </div>
       </div>
     </section>

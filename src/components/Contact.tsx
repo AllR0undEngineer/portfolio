@@ -70,11 +70,11 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection direction="up">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Get In Touch
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-8"></div>
-            <p className={`text-xl ${darkMode ? 'text-gray-300' : 'text-gray-700'} max-w-3xl mx-auto`}>
+            <p className={`text-base sm:text-lg md:text-xl ${darkMode ? 'text-gray-300' : 'text-gray-700'} max-w-3xl mx-auto px-4`}>
               Have a project in mind or want to discuss opportunities? I'd love to hear from you!
             </p>
           </div>
@@ -85,10 +85,10 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
           <AnimatedSection direction="left" delay={200}>
             <div className="space-y-8">
               <div>
-                <h3 className={`text-2xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-xl sm:text-2xl font-bold mb-4 sm:mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                   Let's Connect
                 </h3>
-                <p className={`text-lg mb-8 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                <p className={`text-base sm:text-lg mb-6 sm:mb-8 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                   I'm always open to discussing new opportunities, collaborating on interesting projects, 
                   or simply having a conversation about technology and innovation.
                 </p>
@@ -97,17 +97,17 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-white" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                      <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                   </div>
                   <div>
-                    <h4 className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                    <h4 className={`text-base sm:text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                       Email
                     </h4>
                     <a 
                       href="mailto:priyanshchandwani1st@gmail.com"
-                      className={`text-lg ${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-500'} transition-colors duration-300`}
+                      className={`text-sm sm:text-base md:text-lg ${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-500'} transition-colors duration-300 break-all`}
                     >
                       priyanshchandwani1st@gmail.com
                     </a>
@@ -116,15 +116,15 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
 
                 <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-white" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center">
+                      <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
                   </div>
                   <div>
-                    <h4 className={`text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                    <h4 className={`text-base sm:text-lg font-semibold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                       Location
                     </h4>
-                    <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <p className={`text-sm sm:text-base md:text-lg ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                       Available for remote opportunities
                     </p>
                   </div>
@@ -133,23 +133,27 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
 
               {/* Social Links */}
               <div>
-                <h4 className={`text-lg font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                <h4 className={`text-base sm:text-lg font-semibold mb-3 sm:mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                   Connect with me
                 </h4>
-                <div className="flex space-x-6">
+                <div className="flex space-x-4 sm:space-x-6">
                   {socialLinks.map((link) => (
                     <a
                       key={link.name}
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`p-3 rounded-full transition-all duration-300 transform hover:scale-110 ${
+                      className={`p-2.5 sm:p-3 rounded-full transition-all duration-300 transform hover:scale-110 ${
                         darkMode 
                           ? 'bg-gray-700 hover:bg-gray-600 text-gray-300' 
                           : 'bg-white hover:bg-gray-50 text-gray-700'
                       } shadow-lg hover:shadow-xl ${link.color}`}
                     >
-                      {link.icon}
+                      <div className="w-5 h-5 sm:w-6 sm:h-6">
+                        {React.cloneElement(link.icon as React.ReactElement, { 
+                          className: "w-full h-full" 
+                        })}
+                      </div>
                     </a>
                   ))}
                 </div>
@@ -159,25 +163,25 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
 
           {/* Contact Form */}
           <AnimatedSection direction="right" delay={400}>
-            <div className={`p-8 rounded-2xl ${darkMode ? 'bg-gray-900' : 'bg-white'} shadow-xl`}>
-              <h3 className={`text-2xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+            <div className={`p-6 sm:p-8 rounded-2xl ${darkMode ? 'bg-gray-900' : 'bg-white'} shadow-xl`}>
+              <h3 className={`text-xl sm:text-2xl font-bold mb-4 sm:mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                 Send Message
               </h3>
 
               {submitted ? (
-                <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-green-600" />
+                <div className="text-center py-6 sm:py-8">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
                   </div>
-                  <h4 className="text-xl font-semibold text-green-600 mb-2">Message Sent!</h4>
-                  <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <h4 className="text-lg sm:text-xl font-semibold text-green-600 mb-2">Message Sent!</h4>
+                  <p className={`text-sm sm:text-base ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                     Thank you for reaching out. I'll get back to you soon!
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                   <div>
-                    <label htmlFor="name" className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <label htmlFor="name" className={`block text-sm font-medium mb-1.5 sm:mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                       Your Name
                     </label>
                     <input
@@ -187,7 +191,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className={`w-full px-4 py-3 rounded-lg border transition-colors duration-300 ${
+                      className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg border transition-colors duration-300 text-sm sm:text-base ${
                         darkMode 
                           ? 'bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-blue-500' 
                           : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blue-500'
@@ -197,7 +201,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <label htmlFor="email" className={`block text-sm font-medium mb-1.5 sm:mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                       Email Address
                     </label>
                     <input
@@ -207,7 +211,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className={`w-full px-4 py-3 rounded-lg border transition-colors duration-300 ${
+                      className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg border transition-colors duration-300 text-sm sm:text-base ${
                         darkMode 
                           ? 'bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-blue-500' 
                           : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blue-500'
@@ -217,7 +221,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className={`block text-sm font-medium mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <label htmlFor="message" className={`block text-sm font-medium mb-1.5 sm:mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                       Message
                     </label>
                     <textarea
@@ -226,8 +230,8 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                       value={formData.message}
                       onChange={handleInputChange}
                       required
-                      rows={6}
-                      className={`w-full px-4 py-3 rounded-lg border transition-colors duration-300 ${
+                      rows={4}
+                      className={`w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg border transition-colors duration-300 text-sm sm:text-base ${
                         darkMode 
                           ? 'bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-blue-500' 
                           : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blue-500'
@@ -239,7 +243,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold transition-all duration-300 ${
+                    className={`w-full flex items-center justify-center space-x-2 px-4 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base ${
                       isSubmitting 
                         ? 'opacity-50 cursor-not-allowed' 
                         : 'hover:from-blue-700 hover:to-purple-700 transform hover:scale-105'
@@ -247,12 +251,12 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                         <span>Sending...</span>
                       </>
                     ) : (
                       <>
-                        <Send className="w-5 h-5" />
+                        <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                         <span>Send Message</span>
                       </>
                     )}

@@ -79,7 +79,7 @@ function App() {
                 <img 
                   src="/src/assets/priyansh-high-resolution-logo-removebg-preview.png" 
                   alt="Priyansh Chandwani Logo" 
-                  className={`w-36 h-22 object-contain transition-all duration-300 ${
+                  className={`w-24 h-16 sm:w-28 sm:h-18 md:w-32 md:h-20 lg:w-36 lg:h-22 object-contain transition-all duration-300 ${
                     darkMode 
                       ? 'filter brightness-0 invert' 
                       : 'filter brightness-0'
@@ -92,12 +92,12 @@ function App() {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 ${
+                  className={`relative px-2 py-2 xl:px-3 text-sm font-medium transition-colors duration-300 ${
                     activeSection === item.id
                       ? 'text-blue-600 dark:text-blue-400'
                       : darkMode 
@@ -113,9 +113,9 @@ function App() {
               ))}
               <button
                 onClick={() => window.open('#', '_blank')}
-                className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+                className="flex items-center space-x-2 px-3 py-2 xl:px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-sm"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-3 h-3 xl:w-4 xl:h-4" />
                 <span>Resume</span>
               </button>
               <button
@@ -124,25 +124,25 @@ function App() {
                   darkMode ? 'bg-gray-800 text-yellow-400' : 'bg-gray-100 text-gray-700'
                 }`}
               >
-                {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                {darkMode ? <Sun className="w-4 h-4 xl:w-5 xl:h-5" /> : <Moon className="w-4 h-4 xl:w-5 xl:h-5" />}
               </button>
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center space-x-4">
+            <div className="lg:hidden flex items-center space-x-3 sm:space-x-4">
               <button
                 onClick={toggleDarkMode}
                 className={`p-2 rounded-lg transition-colors duration-300 ${
                   darkMode ? 'bg-gray-800 text-yellow-400' : 'bg-gray-100 text-gray-700'
                 }`}
               >
-                {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                {darkMode ? <Sun className="w-4 h-4 sm:w-5 sm:h-5" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
               </button>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
               >
-                {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {isMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5" />}
               </button>
             </div>
           </div>
@@ -150,13 +150,13 @@ function App() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className={`md:hidden ${darkMode ? 'bg-gray-900 border-gray-800' : 'bg-white border-gray-200'} border-t`}>
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className={`lg:hidden ${darkMode ? 'bg-gray-900 border-gray-800' : 'bg-white border-gray-200'} border-t`}>
+            <div className="px-3 pt-3 pb-4 space-y-2 sm:px-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-3 py-2 text-base font-medium rounded-md transition-colors duration-300 ${
+                  className={`block w-full text-left px-3 py-2.5 text-base font-medium rounded-md transition-colors duration-300 ${
                     activeSection === item.id
                       ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
                       : darkMode 
@@ -169,7 +169,7 @@ function App() {
               ))}
               <button
                 onClick={() => window.open('/src/assets/resumemain(1).pdf', '_blank')}
-                className="flex items-center space-x-2 w-full px-3 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-md hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+                className="flex items-center justify-center space-x-2 w-full px-3 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-md hover:from-blue-700 hover:to-purple-700 transition-all duration-300 mt-3"
               >
                 <Download className="w-4 h-4" />
                 <span>Resume</span>
@@ -196,9 +196,9 @@ function App() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-110"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-50 p-2.5 sm:p-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-110"
         >
-          <ChevronUp className="w-6 h-6" />
+          <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
       )}
     </div>
