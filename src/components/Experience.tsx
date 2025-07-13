@@ -24,23 +24,33 @@ const Experience: React.FC<ExperienceProps> = ({ darkMode }) => {
   ];
 
   return (
-    <section id="experience" className={`py-20 ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-20 bg-gradient-to-br from-black via-purple-900 to-gray-900 relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 cyber-grid opacity-20"></div>
+      <div className="absolute inset-0 circuit-pattern opacity-15"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <AnimatedSection direction="up">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Professional Experience
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-mono">
+              <span className="neon-text-cyan neon-pulse">> DATA_LOGS.access()</span>
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-8"></div>
-            <p className={`text-xl ${darkMode ? 'text-gray-300' : 'text-gray-700'} max-w-3xl mx-auto`}>
-              Building expertise through hands-on experience in modern development and operations
+            <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mx-auto rounded-full neon-glow-cyan"></div>
+            <div className="mt-6 terminal-text">
+              <span className="neon-text-green">LOADING:</span> 
+              <span className="neon-text-cyan ml-2">EXPERIENCE_DATABASE</span>
+            </div>
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4 mt-4">
+              Building expertise through <span className="neon-text-cyan">hands-on experience</span> in 
+              <span className="neon-text-pink"> modern development</span> and 
+              <span className="neon-text-green"> operations</span>
             </p>
           </div>
         </AnimatedSection>
 
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 to-purple-600"></div>
+          {/* Cyberpunk Timeline Line */}
+          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 via-purple-500 to-pink-500 neon-glow-cyan"></div>
 
           {experiences.map((experience, index) => (
             <AnimatedSection 
@@ -49,39 +59,35 @@ const Experience: React.FC<ExperienceProps> = ({ darkMode }) => {
               delay={200}
             >
               <div className="relative mb-12">
-                {/* Timeline Node */}
-                <div className="absolute left-6 w-4 h-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full border-4 border-white dark:border-gray-800"></div>
+                {/* Cyberpunk Timeline Node */}
+                <div className="absolute left-6 w-6 h-6 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full border-4 border-black neon-glow-cyan"></div>
                 
                 {/* Content */}
                 <div className="ml-20">
-                  <div className={`p-8 rounded-2xl transition-all duration-300 ${
-                    darkMode 
-                      ? 'bg-gray-900 hover:bg-gray-800' 
-                      : 'bg-white hover:bg-gray-50'
-                  } shadow-lg hover:shadow-xl`}>
+                  <div className="cyber-card p-6 sm:p-8 rounded-2xl transition-all duration-300 neon-border-animated relative overflow-hidden">
                     {/* Header */}
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
                       <div>
-                        <h3 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                        <h3 className="text-xl sm:text-2xl font-bold mb-2 neon-text-cyan font-mono">
                           {experience.title}
                         </h3>
                         <div className="flex items-center space-x-2 mb-2">
-                          <Building2 className="w-5 h-5 text-blue-600" />
-                          <span className={`text-lg font-semibold ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+                          <Building2 className="w-5 h-5 text-pink-400 neon-glow-pink" />
+                          <span className="text-base sm:text-lg font-semibold neon-text-pink">
                             {experience.company}
                           </span>
                         </div>
                       </div>
                       <div className="flex flex-col sm:items-end space-y-2">
                         <div className="flex items-center space-x-2">
-                          <Calendar className="w-4 h-4 text-gray-500" />
-                          <span className={`text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                          <Calendar className="w-4 h-4 text-green-400 neon-glow-green" />
+                          <span className="text-sm font-medium text-gray-300 font-mono">
                             {experience.period}
                           </span>
                         </div>
                         <div className="flex items-center space-x-2">
-                          <MapPin className="w-4 h-4 text-gray-500" />
-                          <span className={`text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                          <MapPin className="w-4 h-4 text-orange-400 neon-glow-orange" />
+                          <span className="text-sm font-medium text-gray-300 font-mono">
                             {experience.location}
                           </span>
                         </div>
@@ -92,9 +98,9 @@ const Experience: React.FC<ExperienceProps> = ({ darkMode }) => {
                     <div className="mb-6">
                       <ul className="space-y-3">
                         {experience.description.map((item, itemIndex) => (
-                          <li key={itemIndex} className={`flex items-start space-x-3 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                            <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-lg leading-relaxed">{item}</span>
+                          <li key={itemIndex} className="flex items-start space-x-3 text-gray-300">
+                            <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full mt-2 flex-shrink-0 neon-glow-cyan"></div>
+                            <span className="text-sm sm:text-base md:text-lg leading-relaxed">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -102,24 +108,23 @@ const Experience: React.FC<ExperienceProps> = ({ darkMode }) => {
 
                     {/* Technologies */}
                     <div>
-                      <h4 className={`text-lg font-semibold mb-3 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                        Technologies Used
+                      <h4 className="text-base sm:text-lg font-semibold mb-3 neon-text-green font-mono">
+                        TECH_STACK.load()
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {experience.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className={`px-3 py-1 rounded-full text-sm font-medium ${
-                              darkMode 
-                                ? 'bg-gray-700 text-gray-300' 
-                                : 'bg-gray-100 text-gray-700'
-                            }`}
+                            className="px-3 py-1 rounded-full text-xs sm:text-sm font-medium font-mono bg-gray-800/50 text-cyan-400 border border-cyan-400/50 neon-glow-cyan"
                           >
                             {tech}
                           </span>
                         ))}
                       </div>
                     </div>
+
+                    {/* Holographic Overlay */}
+                    <div className="absolute inset-0 holographic opacity-20"></div>
                   </div>
                 </div>
               </div>
@@ -130,20 +135,25 @@ const Experience: React.FC<ExperienceProps> = ({ darkMode }) => {
         {/* Future Opportunities */}
         <AnimatedSection direction="up" delay={400}>
           <div className="text-center mt-16">
-            <div className={`p-8 rounded-2xl ${darkMode ? 'bg-gray-900' : 'bg-white'} shadow-lg`}>
-              <h3 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-                Looking for New Opportunities
+            <div className="cyber-card p-6 sm:p-8 rounded-2xl neon-border-animated relative overflow-hidden">
+              <div className="terminal-text mb-4">
+                <span className="neon-text-green">> career_status.exe</span>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 neon-text-cyan font-mono">
+                SEEKING_NEW_OPPORTUNITIES
               </h3>
-              <p className={`text-lg mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                I'm actively seeking full-time positions where I can contribute to innovative projects 
-                and continue growing as a developer and operations specialist.
+              <p className="text-sm sm:text-base md:text-lg mb-6 text-gray-300 leading-relaxed">
+                I'm actively seeking <span className="neon-text-cyan">full-time positions</span> where I can contribute to 
+                <span className="neon-text-pink"> innovative projects</span> and continue growing as a 
+                <span className="neon-text-green">developer and operations specialist</span>.
               </p>
               <a
                 href="#contact"
-                className="inline-flex items-center space-x-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+                className="cyber-button inline-flex items-center space-x-2 px-6 py-3 sm:px-8 font-mono font-semibold transition-all duration-300 transform hover:scale-105"
               >
-                <span>Let's Connect</span>
+                <span>ESTABLISH_CONNECTION</span>
               </a>
+              <div className="absolute inset-0 holographic opacity-20"></div>
             </div>
           </div>
         </AnimatedSection>
