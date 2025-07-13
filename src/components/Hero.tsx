@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Code, Brain, Server, User, Award, Mail, Briefcase } from 'lucide-react';
+import { ChevronDown, Code, Brain, Server, User, Award, Mail, Briefcase, Zap } from 'lucide-react';
 
 interface HeroProps {
   darkMode: boolean;
@@ -13,10 +13,10 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
   const [hoveredPoint, setHoveredPoint] = useState<string | null>(null);
 
   const titles = [
-    'MLOps Engineer',
-    'Full Stack Developer',
-    'DevOps Specialist',
-    'AI Enthusiast'
+    'CYBER MLOPS ENGINEER',
+    'QUANTUM DEVELOPER',
+    'NEURAL ARCHITECT',
+    'DATA SYNTHESIZER'
   ];
 
   useEffect(() => {
@@ -68,51 +68,51 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
   const navigationPoints = [
     { 
       id: 'about', 
-      label: 'About Me', 
+      label: 'NEURAL PROFILE', 
       icon: <User className="w-5 h-5" />, 
       angle: 0,
       radius: 140,
-      color: 'from-blue-500 to-cyan-500'
+      color: '#00ffff'
     },
     { 
       id: 'skills', 
-      label: 'Skills', 
+      label: 'TECH MATRIX', 
       icon: <Brain className="w-5 h-5" />, 
       angle: 60,
       radius: 140,
-      color: 'from-orange-500 to-red-500'
+      color: '#ff00ff'
     },
     { 
       id: 'projects', 
-      label: 'Projects', 
+      label: 'CODE VAULT', 
       icon: <Code className="w-5 h-5" />, 
       angle: 120,
       radius: 140,
-      color: 'from-green-500 to-teal-500'
+      color: '#00ff00'
     },
     { 
       id: 'experience', 
-      label: 'Experience', 
+      label: 'DATA LOGS', 
       icon: <Briefcase className="w-5 h-5" />, 
       angle: 180,
       radius: 140,
-      color: 'from-purple-500 to-violet-500'
+      color: '#8000ff'
     },
     { 
       id: 'achievements', 
-      label: 'Achievements', 
+      label: 'ACHIEVEMENTS', 
       icon: <Award className="w-5 h-5" />, 
       angle: 240,
       radius: 140,
-      color: 'from-yellow-500 to-orange-500'
+      color: '#ff8000'
     },
     { 
       id: 'contact', 
-      label: 'Contact', 
+      label: 'TRANSMISSION', 
       icon: <Mail className="w-5 h-5" />, 
       angle: 300,
       radius: 140,
-      color: 'from-pink-500 to-rose-500'
+      color: '#0080ff'
     }
   ];
 
@@ -120,7 +120,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
   const getPointPosition = (angle: number, radius: number) => {
     const radian = (angle + globeRotation) * (Math.PI / 180);
     const x = Math.cos(radian) * radius;
-    const y = Math.sin(radian) * radius * 0.5; // Flatten for 3D effect
+    const y = Math.sin(radian) * radius * 0.5;
     return {
       left: `calc(50% + ${x}px)`,
       top: `calc(50% + ${y}px)`,
@@ -129,106 +129,126 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
   };
 
   return (
-    <section id="home" className={`min-h-screen flex items-center justify-center relative overflow-hidden ${
-      darkMode ? 'bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900' : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'
-    }`}>
-      {/* Animated Background Particles */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(50)].map((_, i) => (
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-black cyber-grid">
+      {/* Matrix Rain Background */}
+      <div className="matrix-rain">
+        {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className={`absolute rounded-full opacity-30 animate-float ${
-              darkMode ? 'bg-blue-400' : 'bg-blue-600'
-            }`}
+            className="absolute w-px bg-gradient-to-b from-transparent via-cyan-400 to-transparent opacity-20"
             style={{
-              width: `${Math.random() * 6 + 2}px`,
-              height: `${Math.random() * 6 + 2}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${3 + Math.random() * 4}s`
+              left: `${i * 5}%`,
+              height: '100vh',
+              animation: `matrix-fall ${3 + Math.random() * 2}s linear infinite`,
+              animationDelay: `${Math.random() * 2}s`
             }}
           />
         ))}
       </div>
 
+      {/* Floating Neon Particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(30)].map((_, i) => (
+          <div
+            key={i}
+            className="floating-particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${3 + Math.random() * 4}s`,
+              background: i % 3 === 0 ? '#00ffff' : i % 3 === 1 ? '#ff00ff' : '#00ff00'
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Scanning Lines */}
+      <div className="scan-lines absolute inset-0"></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight">
-                <span className={`block ${darkMode ? 'text-white' : 'text-gray-900'}`}>Hi, I'm</span>
-                <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                  Priyansh Chandwani
-                </span>
-              </h1>
-              <div className={`text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold ${darkMode ? 'text-gray-300' : 'text-gray-800'} h-12 sm:h-14 md:h-16 flex items-center justify-center lg:justify-start`}>
-                <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                  {typedText}
-                </span>
-                <span className="ml-1 w-0.5 sm:w-1 h-6 sm:h-7 md:h-8 bg-gradient-to-r from-orange-500 to-red-500 animate-pulse"></span>
+            <div className="space-y-6">
+              <div className="relative">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight">
+                  <span className="block text-white mb-2">INITIALIZING...</span>
+                  <span className="block neon-text-cyan neon-pulse glitch" data-text="PRIYANSH CHANDWANI">
+                    PRIYANSH CHANDWANI
+                  </span>
+                </h1>
+                <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 blur-xl -z-10 animate-pulse"></div>
               </div>
-              <p className={`text-base sm:text-lg md:text-xl ${darkMode ? 'text-gray-400' : 'text-gray-700'} max-w-2xl mx-auto lg:mx-0 px-4 lg:px-0`}>
-                Passionate about building scalable ML pipelines, creating innovative web applications, 
-                and implementing cutting-edge AI solutions.
-              </p>
+              
+              <div className="h-16 sm:h-20 flex items-center justify-center lg:justify-start">
+                <div className="terminal-text text-lg sm:text-xl md:text-2xl lg:text-3xl font-mono">
+                  <span className="neon-text-green">
+                    {typedText}
+                  </span>
+                  <span className="ml-1 w-1 h-8 bg-cyan-400 animate-pulse inline-block neon-glow-cyan"></span>
+                </div>
+              </div>
+              
+              <div className="relative">
+                <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 px-4 lg:px-0 leading-relaxed">
+                  <span className="neon-text-cyan">QUANTUM-ENHANCED</span> ML pipelines • 
+                  <span className="neon-text-pink"> NEURAL</span> web architectures • 
+                  <span className="neon-text-green"> CYBERNETIC</span> AI solutions
+                </p>
+                <div className="absolute inset-0 holographic opacity-30"></div>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
               <button
                 onClick={scrollToProjects}
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
+                className="cyber-button group relative overflow-hidden"
               >
-                View Projects
+                <Zap className="w-5 h-5 inline mr-2" />
+                ACCESS PROJECTS
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </button>
+              
               <button
                 onClick={scrollToContact}
-                className={`px-6 sm:px-8 py-3 sm:py-4 border-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 text-sm sm:text-base ${
-                  darkMode 
-                    ? 'border-gray-600 text-gray-300 hover:border-gray-400 hover:text-white' 
-                    : 'border-gray-400 text-gray-800 hover:border-gray-600 hover:text-gray-900'
-                }`}
+                className="cyber-button group relative overflow-hidden border-pink-500 text-pink-500 hover:bg-pink-500"
               >
-                Contact Me
+                <Mail className="w-5 h-5 inline mr-2" />
+                ESTABLISH LINK
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-400/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </button>
             </div>
           </div>
 
-          {/* Right Content - Interactive Globe */}
+          {/* Right Content - Cyberpunk Globe */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
-              {/* Globe Container */}
+              {/* Energy Field */}
+              <div className="absolute inset-0 energy-field rounded-full"></div>
+              
+              {/* Main Holographic Globe */}
               <div className="relative w-full h-full">
-                {/* Main Globe */}
-                <div className={`absolute inset-4 sm:inset-6 md:inset-8 rounded-full border-2 sm:border-3 md:border-4 ${
-                  darkMode 
-                    ? 'border-blue-400/30 bg-gradient-to-br from-blue-900/20 to-purple-900/20' 
-                    : 'border-blue-500/30 bg-gradient-to-br from-blue-100/50 to-purple-100/50'
-                } backdrop-blur-sm transition-all duration-300 hover:border-blue-400/50`}>
+                <div className="absolute inset-4 sm:inset-6 md:inset-8 rounded-full border-2 border-cyan-400/50 bg-gradient-to-br from-cyan-900/20 to-purple-900/20 backdrop-blur-sm neon-border-animated hologram-flicker">
                   
-                  {/* Globe Grid Lines */}
-                  <div className="absolute inset-0 rounded-full overflow-hidden">
-                    {/* Horizontal lines */}
+                  {/* Cyberpunk Grid Lines */}
+                  <div className="absolute inset-0 rounded-full overflow-hidden circuit-pattern opacity-30">
+                    {/* Horizontal scan lines */}
                     {[...Array(8)].map((_, i) => (
                       <div
                         key={`h-${i}`}
-                        className={`absolute left-0 right-0 h-px ${
-                          darkMode ? 'bg-blue-400/20' : 'bg-blue-500/20'
-                        }`}
+                        className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60"
                         style={{ 
                           top: `${(i + 1) * 12.5}%`,
                           transform: `rotateZ(${globeRotation * 0.3}deg)`
                         }}
                       />
                     ))}
-                    {/* Vertical lines */}
+                    {/* Vertical scan lines */}
                     {[...Array(12)].map((_, i) => (
                       <div
                         key={`v-${i}`}
-                        className={`absolute top-0 bottom-0 w-px ${
-                          darkMode ? 'bg-blue-400/20' : 'bg-blue-500/20'
-                        }`}
+                        className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-pink-400 to-transparent opacity-40"
                         style={{ 
                           left: `${(i + 1) * 8.33}%`,
                           transform: `rotateZ(${globeRotation * 0.2}deg)`
@@ -237,25 +257,18 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                     ))}
                   </div>
 
-                  {/* Center Logo */}
+                  {/* Central Core */}
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div 
-                      className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full p-1 sm:p-1.5 md:p-2 flex items-center justify-center animate-pulse shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300 ${
-                        darkMode 
-                          ? 'bg-gradient-to-r from-blue-600 to-purple-600' 
-                          : 'bg-gradient-to-r from-blue-500 to-purple-500'
-                      }`}
+                      className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full p-1 sm:p-1.5 md:p-2 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300 neon-glow-cyan cyber-card"
                       onClick={() => scrollToSection('home')}
                     >
                       <img 
                         src="/src/assets/priyansh-high-resolution-logo-removebg-preview.png" 
-                        alt="Priyansh Chandwani Logo" 
-                        className={`w-full h-full object-contain transition-all duration-300 ${
-                          darkMode 
-                            ? 'filter brightness-0 invert' 
-                            : 'filter brightness-0'
-                        }`}
+                        alt="Neural Core" 
+                        className="w-full h-full object-contain filter brightness-0 invert"
                       />
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400/20 to-purple-400/20 animate-pulse"></div>
                     </div>
                   </div>
                 </div>
@@ -271,8 +284,11 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                     onMouseLeave={() => setHoveredPoint(null)}
                   >
                     <div 
-                      className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-r ${point.color} flex items-center justify-center text-white shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:shadow-xl transform hover:rotate-12`}
+                      className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 group-hover:scale-125 transform hover:rotate-12 cyber-card"
                       style={{
+                        background: `linear-gradient(45deg, ${point.color}, ${point.color}80)`,
+                        boxShadow: `0 0 20px ${point.color}`,
+                        border: `2px solid ${point.color}`,
                         animation: `float 3s ease-in-out infinite`,
                         animationDelay: `${index * 0.5}s`
                       }}
@@ -284,53 +300,57 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                       </div>
                     </div>
                     
-                    {/* Label */}
-                    <div className={`absolute -bottom-8 sm:-bottom-10 md:-bottom-12 left-1/2 transform -translate-x-1/2 transition-all duration-300 ${
+                    {/* Holographic Label */}
+                    <div className={`absolute -bottom-12 sm:-bottom-14 md:-bottom-16 left-1/2 transform -translate-x-1/2 transition-all duration-300 ${
                       hoveredPoint === point.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                     }`}>
-                      <div className={`px-2 py-1 sm:px-3 sm:py-2 rounded-lg ${
-                        darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'
-                      } shadow-lg text-xs sm:text-sm font-semibold whitespace-nowrap border ${
-                        darkMode ? 'border-gray-700' : 'border-gray-200'
-                      }`}>
+                      <div className="px-3 py-2 rounded-lg cyber-card text-xs sm:text-sm font-mono font-bold whitespace-nowrap border"
+                           style={{ 
+                             borderColor: point.color,
+                             color: point.color,
+                             textShadow: `0 0 10px ${point.color}`
+                           }}>
                         {point.label}
                       </div>
-                      <div className={`absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1 w-2 h-2 rotate-45 ${
-                        darkMode ? 'bg-gray-800' : 'bg-white'
-                      }`}></div>
+                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1 w-2 h-2 rotate-45"
+                           style={{ backgroundColor: point.color }}></div>
                     </div>
 
-                    {/* Click Ripple Effect */}
-                    <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${point.color} opacity-0 group-active:opacity-50 group-active:animate-ping`}></div>
+                    {/* Energy Pulse */}
+                    <div className="absolute inset-0 rounded-full opacity-0 group-active:opacity-50 group-active:animate-ping"
+                         style={{ background: point.color }}></div>
                     
-                    {/* Hover Glow */}
-                    <div className={`absolute -inset-2 rounded-full bg-gradient-to-r ${point.color} opacity-0 group-hover:opacity-20 blur-md transition-opacity duration-300`}></div>
+                    {/* Hover Aura */}
+                    <div className="absolute -inset-4 rounded-full opacity-0 group-hover:opacity-30 blur-md transition-opacity duration-300"
+                         style={{ background: point.color }}></div>
                   </div>
                 ))}
 
-                {/* Orbital Rings */}
+                {/* Orbital Data Streams */}
                 <div 
-                  className="absolute inset-0 rounded-full border border-blue-400/10"
+                  className="absolute inset-0 rounded-full border border-cyan-400/20 data-stream"
                   style={{ transform: `rotate(${globeRotation}deg)` }}
                 ></div>
                 <div 
-                  className="absolute inset-4 rounded-full border border-purple-400/10"
+                  className="absolute inset-4 rounded-full border border-pink-400/20 data-stream"
                   style={{ transform: `rotate(${-globeRotation * 0.7}deg)` }}
                 ></div>
                 <div 
-                  className="absolute inset-12 rounded-full border border-indigo-400/10"
+                  className="absolute inset-12 rounded-full border border-green-400/20 data-stream"
                   style={{ transform: `rotate(${globeRotation * 0.5}deg)` }}
                 ></div>
 
-                {/* Outer Glow Ring */}
-                <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-indigo-600/10 blur-xl animate-pulse"></div>
+                {/* Outer Energy Ring */}
+                <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-cyan-600/10 via-purple-600/10 to-pink-600/10 blur-2xl animate-pulse"></div>
               </div>
 
-              {/* Interactive Instruction */}
-              <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
-                <p className={`text-xs sm:text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-600'} text-center animate-bounce`}>
-                  Click points to navigate
-                </p>
+              {/* System Status */}
+              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
+                <div className="terminal-text text-xs font-mono">
+                  <span className="neon-text-green">SYSTEM_STATUS:</span> 
+                  <span className="neon-text-cyan ml-2">ONLINE</span>
+                  <span className="ml-2 w-2 h-2 bg-green-400 rounded-full inline-block animate-pulse neon-glow-green"></span>
+                </div>
               </div>
             </div>
           </div>
@@ -340,12 +360,21 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="flex flex-col items-center space-y-2">
-          <span className={`text-xs sm:text-sm font-medium ${darkMode ? 'text-gray-400' : 'text-gray-700'}`}>
-            Explore
+          <span className="text-xs sm:text-sm font-mono neon-text-cyan">
+            SCROLL_TO_EXPLORE
           </span>
-          <ChevronDown className={`w-6 h-6 sm:w-8 sm:h-8 ${darkMode ? 'text-gray-400' : 'text-gray-700'}`} />
+          <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 neon-text-cyan neon-glow-cyan" />
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes matrix-fall {
+          0% { transform: translateY(-100vh); opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { transform: translateY(100vh); opacity: 0; }
+        }
+      `}</style>
     </section>
   );
 };

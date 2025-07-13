@@ -65,13 +65,29 @@ function App() {
   ];
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${
-      darkMode ? 'dark bg-gray-900 text-white' : 'bg-white text-gray-900 light-mode'
-    }`}>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-purple-900 text-white cyber-grid relative overflow-hidden">
+      {/* Quantum Particles Background */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="quantum-particle absolute"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 6}s`,
+              animationDuration: `${4 + Math.random() * 4}s`,
+              background: i % 4 === 0 ? '#00ffff' : i % 4 === 1 ? '#ff00ff' : i % 4 === 2 ? '#00ff00' : '#ff8000'
+            }}
+          />
+        ))}
+      </div>
+      
+      {/* Scanning Lines */}
+      <div className="scan-lines fixed inset-0 pointer-events-none z-10"></div>
+      
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        darkMode ? 'bg-gray-900/95 backdrop-blur-md border-gray-800' : 'bg-white/95 backdrop-blur-md border-gray-200'
-      } border-b`}>
+      <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/90 backdrop-blur-md border-b border-cyan-400/30 cyber-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
@@ -79,15 +95,8 @@ function App() {
                 <img 
                   src="/src/assets/priyansh-high-resolution-logo-removebg-preview.png" 
                   alt="Priyansh Chandwani Logo" 
-                  className={`w-24 h-16 sm:w-28 sm:h-18 md:w-32 md:h-20 lg:w-36 lg:h-22 object-contain transition-all duration-300 ${
-                    darkMode 
-                      ? 'filter brightness-0 invert' 
-                      : 'filter brightness-0'
-                  }`}
+                  className="w-24 h-16 sm:w-28 sm:h-18 md:w-32 md:h-20 lg:w-36 lg:h-22 object-contain transition-all duration-300 filter brightness-0 invert neon-glow-cyan"
                 />
-                {/* <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Priyansh
-                </span> */}
               </div>
             </div>
 
@@ -97,34 +106,30 @@ function App() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`relative px-2 py-2 xl:px-3 text-sm font-medium transition-colors duration-300 ${
+                  className={`relative px-2 py-2 xl:px-3 text-sm font-medium font-mono transition-colors duration-300 uppercase tracking-wider ${
                     activeSection === item.id
-                      ? 'text-blue-600 dark:text-blue-400'
-                      : darkMode 
-                        ? 'text-gray-300 hover:text-blue-400' 
-                        : 'text-gray-800 hover:text-blue-600'
+                      ? 'neon-text-cyan'
+                      : 'text-gray-300 hover:neon-text-cyan'
                   }`}
                 >
                   {item.label}
                   {activeSection === item.id && (
-                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full neon-glow-cyan"></div>
                   )}
                 </button>
               ))}
               <button
                 onClick={() => window.open('#', '_blank')}
-                className="flex items-center space-x-2 px-3 py-2 xl:px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 text-sm"
+                className="cyber-button flex items-center space-x-2 px-3 py-2 xl:px-4 text-sm"
               >
                 <Download className="w-3 h-3 xl:w-4 xl:h-4" />
                 <span>Resume</span>
               </button>
               <button
                 onClick={toggleDarkMode}
-                className={`p-2 rounded-lg transition-colors duration-300 ${
-                  darkMode ? 'bg-gray-800 text-yellow-400' : 'bg-gray-100 text-gray-700'
-                }`}
+                className="p-2 rounded-lg transition-colors duration-300 bg-gray-800/50 text-yellow-400 neon-glow-orange hover:neon-glow-yellow"
               >
-                {darkMode ? <Sun className="w-4 h-4 xl:w-5 xl:h-5" /> : <Moon className="w-4 h-4 xl:w-5 xl:h-5" />}
+                <Sun className="w-4 h-4 xl:w-5 xl:h-5" />
               </button>
             </div>
 
@@ -132,15 +137,13 @@ function App() {
             <div className="lg:hidden flex items-center space-x-3 sm:space-x-4">
               <button
                 onClick={toggleDarkMode}
-                className={`p-2 rounded-lg transition-colors duration-300 ${
-                  darkMode ? 'bg-gray-800 text-yellow-400' : 'bg-gray-100 text-gray-700'
-                }`}
+                className="p-2 rounded-lg transition-colors duration-300 bg-gray-800/50 text-yellow-400 neon-glow-orange"
               >
-                {darkMode ? <Sun className="w-4 h-4 sm:w-5 sm:h-5" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
+                <Sun className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
+                className="p-2 rounded-lg bg-gray-800/50 text-cyan-400 neon-glow-cyan"
               >
                 {isMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5" />}
               </button>
@@ -150,18 +153,16 @@ function App() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className={`lg:hidden ${darkMode ? 'bg-gray-900 border-gray-800' : 'bg-white border-gray-200'} border-t`}>
+          <div className="lg:hidden bg-black/95 border-t border-cyan-400/30 cyber-card">
             <div className="px-3 pt-3 pb-4 space-y-2 sm:px-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-3 py-2.5 text-base font-medium rounded-md transition-colors duration-300 ${
+                  className={`block w-full text-left px-3 py-2.5 text-base font-medium font-mono rounded-md transition-colors duration-300 uppercase tracking-wider ${
                     activeSection === item.id
-                      ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                      : darkMode 
-                        ? 'text-gray-300 hover:text-blue-400' 
-                        : 'text-gray-800 hover:text-blue-600'
+                      ? 'neon-text-cyan bg-cyan-900/20'
+                      : 'text-gray-300 hover:neon-text-cyan'
                   }`}
                 >
                   {item.label}
@@ -169,7 +170,7 @@ function App() {
               ))}
               <button
                 onClick={() => window.open('/src/assets/resumemain(1).pdf', '_blank')}
-                className="flex items-center justify-center space-x-2 w-full px-3 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-md hover:from-blue-700 hover:to-purple-700 transition-all duration-300 mt-3"
+                className="cyber-button flex items-center justify-center space-x-2 w-full px-3 py-2.5 rounded-md transition-all duration-300 mt-3"
               >
                 <Download className="w-4 h-4" />
                 <span>Resume</span>
@@ -181,22 +182,22 @@ function App() {
 
       {/* Main Content */}
       <main className="pt-16">
-        <Hero darkMode={darkMode} />
-        <About darkMode={darkMode} />
-        <Skills darkMode={darkMode} />
-        <Projects darkMode={darkMode} />
-        <Experience darkMode={darkMode} />
-        <Achievements darkMode={darkMode} />
-        <Contact darkMode={darkMode} />
+        <Hero darkMode={true} />
+        <About darkMode={true} />
+        <Skills darkMode={true} />
+        <Projects darkMode={true} />
+        <Experience darkMode={true} />
+        <Achievements darkMode={true} />
+        <Contact darkMode={true} />
       </main>
 
-      <Footer darkMode={darkMode} />
+      <Footer darkMode={true} />
 
       {/* Scroll to Top Button */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-50 p-2.5 sm:p-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-110"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-50 p-2.5 sm:p-3 bg-gradient-to-r from-cyan-600 to-purple-600 text-white rounded-full shadow-lg hover:from-cyan-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-110 neon-glow-cyan cyber-button"
         >
           <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
