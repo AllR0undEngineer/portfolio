@@ -13,10 +13,10 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
   const [hoveredPoint, setHoveredPoint] = useState<string | null>(null);
 
   const titles = [
-    'CYBER MLOPS ENGINEER',
-    'QUANTUM DEVELOPER',
-    'NEURAL ARCHITECT',
-    'DATA SYNTHESIZER'
+    'MLOPS ENGINEER',
+    'FULL STACK DEVELOPER',
+    'SOFTWARE ARCHITECT',
+    'DATA ENGINEER'
   ];
 
   useEffect(() => {
@@ -68,35 +68,35 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
   const navigationPoints = [
     { 
       id: 'about', 
-      label: 'NEURAL PROFILE', 
+      label: 'ABOUT ME', 
       icon: <User className="w-5 h-5" />, 
       angle: 0,
       radius: 140,
-      color: '#00ffff'
+      color: '#3b82f6'
     },
     { 
       id: 'skills', 
-      label: 'TECH MATRIX', 
+      label: 'SKILLS', 
       icon: <Brain className="w-5 h-5" />, 
       angle: 60,
       radius: 140,
-      color: '#ff00ff'
+      color: '#8b5cf6'
     },
     { 
       id: 'projects', 
-      label: 'CODE VAULT', 
+      label: 'PROJECTS', 
       icon: <Code className="w-5 h-5" />, 
       angle: 120,
       radius: 140,
-      color: '#00ff00'
+      color: '#10b981'
     },
     { 
       id: 'experience', 
-      label: 'DATA LOGS', 
+      label: 'EXPERIENCE', 
       icon: <Briefcase className="w-5 h-5" />, 
       angle: 180,
       radius: 140,
-      color: '#8000ff'
+      color: '#f59e0b'
     },
     { 
       id: 'achievements', 
@@ -104,15 +104,15 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
       icon: <Award className="w-5 h-5" />, 
       angle: 240,
       radius: 140,
-      color: '#ff8000'
+      color: '#ef4444'
     },
     { 
       id: 'contact', 
-      label: 'TRANSMISSION', 
+      label: 'CONTACT', 
       icon: <Mail className="w-5 h-5" />, 
       angle: 300,
       radius: 140,
-      color: '#0080ff'
+      color: '#06b6d4'
     }
   ];
 
@@ -194,9 +194,9 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
               
               <div className="relative">
                 <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0 px-4 lg:px-0 leading-relaxed">
-                  <span className="neon-text-cyan">QUANTUM-ENHANCED</span> ML pipelines • 
-                  <span className="neon-text-pink"> NEURAL</span> web architectures • 
-                  <span className="neon-text-green"> CYBERNETIC</span> AI solutions
+                  <span className="text-blue-400">Modern</span> ML pipelines • 
+                  <span className="text-purple-400"> Scalable</span> web architectures • 
+                  <span className="text-green-400"> Intelligent</span> AI solutions
                 </p>
                 <div className="absolute inset-0 holographic opacity-30"></div>
               </div>
@@ -205,19 +205,19 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
               <button
                 onClick={scrollToProjects}
-                className="cyber-button group relative overflow-hidden"
+                className="modern-button group relative overflow-hidden bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
               >
                 <Zap className="w-5 h-5 inline mr-2" />
-                ACCESS PROJECTS
+                VIEW PROJECTS
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </button>
               
               <button
                 onClick={scrollToContact}
-                className="cyber-button group relative overflow-hidden border-pink-500 text-pink-500 hover:bg-pink-500"
+                className="modern-button group relative overflow-hidden border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
               >
                 <Mail className="w-5 h-5 inline mr-2" />
-                ESTABLISH LINK
+                GET IN TOUCH
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-400/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </button>
             </div>
@@ -282,11 +282,11 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                     onMouseEnter={() => setHoveredPoint(point.id)}
                     onMouseLeave={() => setHoveredPoint(null)}
                   >
-                    <div 
+                  <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
                       className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 group-hover:scale-125 transform hover:rotate-12 cyber-card"
                       style={{
-                        background: `linear-gradient(45deg, ${point.color}, ${point.color}80)`,
-                        boxShadow: `0 0 20px ${point.color}`,
+                        background: `linear-gradient(45deg, ${point.color}, ${point.color}cc)`,
+                        boxShadow: `0 4px 15px ${point.color}40`,
                         border: `2px solid ${point.color}`,
                         animation: `float 3s ease-in-out infinite`,
                         animationDelay: `${index * 0.5}s`
@@ -303,11 +303,11 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                     <div className={`absolute -bottom-12 sm:-bottom-14 md:-bottom-16 left-1/2 transform -translate-x-1/2 transition-all duration-300 ${
                       hoveredPoint === point.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                     }`}>
-                      <div className="px-3 py-2 rounded-lg cyber-card text-xs sm:text-sm font-mono font-bold whitespace-nowrap border"
+                      <div className="px-3 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-xs sm:text-sm font-semibold whitespace-nowrap border shadow-lg"
                            style={{ 
                              borderColor: point.color,
                              color: point.color,
-                             textShadow: `0 0 10px ${point.color}`
+                             textShadow: `0 0 5px ${point.color}40`
                            }}>
                         {point.label}
                       </div>
@@ -346,9 +346,9 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
               {/* System Status */}
               <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
                 <div className="terminal-text text-xs font-mono">
-                  <span className="neon-text-green">SYSTEM_STATUS:</span> 
-                  <span className="neon-text-cyan ml-2">ONLINE</span>
-                  <span className="ml-2 w-2 h-2 bg-green-400 rounded-full inline-block animate-pulse neon-glow-green"></span>
+                  <span className="text-green-400">STATUS:</span> 
+                  <span className="text-blue-400 ml-2">AVAILABLE</span>
+                  <span className="ml-2 w-2 h-2 bg-green-400 rounded-full inline-block animate-pulse"></span>
                 </div>
               </div>
             </div>
@@ -360,9 +360,9 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="flex flex-col items-center space-y-2">
           <span className="text-xs sm:text-sm font-mono neon-text-cyan">
-            SCROLL_TO_EXPLORE
+            SCROLL TO EXPLORE
           </span>
-          <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 neon-text-cyan neon-glow-cyan" />
+          <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
         </div>
       </div>
 

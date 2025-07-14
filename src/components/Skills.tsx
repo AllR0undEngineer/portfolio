@@ -68,23 +68,23 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-mono">
-            <span className="neon-text-cyan neon-pulse">&gt; TECH_MATRIX.load()</span>
+            <span className="text-blue-500">Technical Skills</span>
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mx-auto rounded-full neon-glow-cyan"></div>
-          <div className="mt-6 terminal-text">
-            <span className="neon-text-green">LOADING:</span> 
-            <span className="neon-text-cyan ml-2">QUANTUM_TOOLKIT_v2.1</span>
+          <div className="w-32 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 mx-auto rounded-full"></div>
+          <div className="mt-6 text-gray-400">
+            <span className="text-green-500">My</span> 
+            <span className="text-blue-500 ml-2">Technology Stack</span>
           </div>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4 mt-4">
-            A comprehensive <span className="neon-text-cyan">neural arsenal</span> for building 
-            <span className="neon-text-pink"> quantum-enhanced</span> applications and 
-            <span className="neon-text-green"> cybernetic</span> ML pipelines
+            A comprehensive <span className="text-blue-400">toolkit</span> for building 
+            <span className="text-purple-400"> modern</span> applications and 
+            <span className="text-green-400"> scalable</span> ML pipelines
           </p>
         </div>
 
         {/* Skills Matrix Container */}
         <div 
-          className="relative min-h-[500px] overflow-hidden cyber-card p-8"
+          className="relative min-h-[500px] overflow-hidden bg-white/5 backdrop-blur-sm border border-gray-600/30 rounded-xl p-8 shadow-xl"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -97,11 +97,11 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
               {skills.slice(0, 6).map((skill, index) => (
                 <div
                   key={`stream1-${skill.name}`}
-                  className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl cyber-card p-3 sm:p-4 flex items-center justify-center text-white relative overflow-hidden"
+                  className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-white/10 backdrop-blur-sm p-3 sm:p-4 flex items-center justify-center text-white relative overflow-hidden shadow-lg"
                   style={{
                     background: `linear-gradient(45deg, ${skill.neonColor}20, ${skill.neonColor}40)`,
                     border: `2px solid ${skill.neonColor}`,
-                    boxShadow: `0 0 20px ${skill.neonColor}`,
+                    boxShadow: `0 4px 15px ${skill.neonColor}40`,
                     animationDelay: `${index * 0.2}s`
                   }}
                 >
@@ -118,11 +118,11 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
               {skills.slice(0, 6).map((skill, index) => (
                 <div
                   key={`stream1-dup-${skill.name}`}
-                  className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl cyber-card p-3 sm:p-4 flex items-center justify-center text-white relative overflow-hidden"
+                  className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-white/10 backdrop-blur-sm p-3 sm:p-4 flex items-center justify-center text-white relative overflow-hidden shadow-lg"
                   style={{
                     background: `linear-gradient(45deg, ${skill.neonColor}20, ${skill.neonColor}40)`,
                     border: `2px solid ${skill.neonColor}`,
-                    boxShadow: `0 0 20px ${skill.neonColor}`
+                    boxShadow: `0 4px 15px ${skill.neonColor}40`
                   }}
                 >
                   <div className="w-6 h-6 sm:w-8 sm:h-8">
@@ -141,11 +141,11 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
               {skills.slice(6, 12).map((skill, index) => (
                 <div
                   key={`stream2-${skill.name}`}
-                  className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl cyber-card p-3 sm:p-4 flex items-center justify-center text-white relative overflow-hidden"
+                  className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-white/10 backdrop-blur-sm p-3 sm:p-4 flex items-center justify-center text-white relative overflow-hidden shadow-lg"
                   style={{
                     background: `linear-gradient(45deg, ${skill.neonColor}20, ${skill.neonColor}40)`,
                     border: `2px solid ${skill.neonColor}`,
-                    boxShadow: `0 0 20px ${skill.neonColor}`,
+                    boxShadow: `0 4px 15px ${skill.neonColor}40`,
                     animationDelay: `${index * 0.2}s`
                   }}
                 >
@@ -162,11 +162,11 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
               {skills.slice(6, 12).map((skill, index) => (
                 <div
                   key={`stream2-dup-${skill.name}`}
-                  className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl cyber-card p-3 sm:p-4 flex items-center justify-center text-white relative overflow-hidden"
+                  className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-white/10 backdrop-blur-sm p-3 sm:p-4 flex items-center justify-center text-white relative overflow-hidden shadow-lg"
                   style={{
                     background: `linear-gradient(45deg, ${skill.neonColor}20, ${skill.neonColor}40)`,
                     border: `2px solid ${skill.neonColor}`,
-                    boxShadow: `0 0 20px ${skill.neonColor}`
+                    boxShadow: `0 4px 15px ${skill.neonColor}40`
                   }}
                 >
                   <div className="w-6 h-6 sm:w-8 sm:h-8">
@@ -185,11 +185,11 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
               {skills.slice(12).map((skill, index) => (
                 <div
                   key={`stream3-${skill.name}`}
-                  className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl cyber-card p-3 sm:p-4 flex items-center justify-center text-white relative overflow-hidden"
+                  className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-white/10 backdrop-blur-sm p-3 sm:p-4 flex items-center justify-center text-white relative overflow-hidden shadow-lg"
                   style={{
                     background: `linear-gradient(45deg, ${skill.neonColor}20, ${skill.neonColor}40)`,
                     border: `2px solid ${skill.neonColor}`,
-                    boxShadow: `0 0 20px ${skill.neonColor}`,
+                    boxShadow: `0 4px 15px ${skill.neonColor}40`,
                     animationDelay: `${index * 0.2}s`
                   }}
                 >
@@ -206,11 +206,11 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
               {skills.slice(12).map((skill, index) => (
                 <div
                   key={`stream3-dup-${skill.name}`}
-                  className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl cyber-card p-3 sm:p-4 flex items-center justify-center text-white relative overflow-hidden"
+                  className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-white/10 backdrop-blur-sm p-3 sm:p-4 flex items-center justify-center text-white relative overflow-hidden shadow-lg"
                   style={{
                     background: `linear-gradient(45deg, ${skill.neonColor}20, ${skill.neonColor}40)`,
                     border: `2px solid ${skill.neonColor}`,
-                    boxShadow: `0 0 20px ${skill.neonColor}`
+                    boxShadow: `0 4px 15px ${skill.neonColor}40`
                   }}
                 >
                   <div className="w-6 h-6 sm:w-8 sm:h-8">
@@ -233,7 +233,7 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
               {skills.map((skill, index) => (
                 <div
                   key={`grid-${skill.name}`}
-                  className="group p-3 sm:p-4 md:p-6 rounded-xl transition-all duration-500 transform hover:scale-105 cyber-card neon-border relative overflow-hidden"
+                  className="group p-3 sm:p-4 md:p-6 rounded-xl transition-all duration-500 transform hover:scale-105 bg-white/5 backdrop-blur-sm border border-gray-600/30 shadow-xl relative overflow-hidden"
                   style={{
                     animationDelay: `${index * 0.05}s`,
                     borderColor: skill.neonColor
@@ -245,7 +245,7 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
                     style={{
                       background: `linear-gradient(45deg, ${skill.neonColor}30, ${skill.neonColor}60)`,
                       border: `2px solid ${skill.neonColor}`,
-                      boxShadow: `0 0 20px ${skill.neonColor}`
+                      boxShadow: `0 4px 15px ${skill.neonColor}40`
                     }}
                   >
                     <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
@@ -254,12 +254,11 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
                         style: { color: skill.neonColor }
                       })}
                     </div>
-                    <div className="absolute inset-0 holographic opacity-40"></div>
                   </div>
                   
                   {/* Skill Name */}
-                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-center mb-1 sm:mb-2 font-mono"
-                      style={{ color: skill.neonColor, textShadow: `0 0 10px ${skill.neonColor}` }}>
+                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-center mb-1 sm:mb-2"
+                      style={{ color: skill.neonColor }}>
                     {skill.name}
                   </h3>
                   
@@ -271,12 +270,11 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
                   {/* Category Badge */}
                   <div className="flex justify-center mt-1 sm:mt-2 md:mt-3">
                     <span 
-                      className="px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full text-xs font-mono font-bold border"
+                      className="px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full text-xs font-semibold border"
                       style={{ 
                         color: skill.neonColor,
                         borderColor: skill.neonColor,
-                        background: `${skill.neonColor}20`,
-                        textShadow: `0 0 5px ${skill.neonColor}`
+                        background: `${skill.neonColor}20`
                       }}
                     >
                       {skill.category}
@@ -292,7 +290,7 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
                   {/* Scan Line */}
                   <div 
                     className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ background: skill.neonColor, boxShadow: `0 0 10px ${skill.neonColor}` }}
+                    style={{ background: skill.neonColor }}
                   ></div>
                 </div>
               ))}
@@ -303,31 +301,30 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
           <div className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 transition-opacity duration-300 ${
             isHovered ? 'opacity-0' : 'opacity-100'
           }`}>
-            <div className="terminal-text text-center">
-              <span className="neon-text-cyan">HOVER_TO_ACCESS:</span>
-              <span className="neon-text-green ml-2">DETAILED_MATRIX</span>
+            <div className="text-center text-gray-400">
+              <span className="text-blue-400">Hover to view:</span>
+              <span className="text-green-400 ml-2">Detailed Skills</span>
             </div>
           </div>
         </div>
 
         {/* System Summary */}
         <div className="mt-16 text-center">
-          <div className="cyber-card p-8 neon-border-animated relative overflow-hidden">
-            <div className="terminal-text mb-4">
-              <span className="neon-text-green">&gt; system_summary.exe</span>
+          <div className="bg-white/5 backdrop-blur-sm border border-gray-600/30 rounded-xl p-8 shadow-xl relative overflow-hidden">
+            <div className="text-gray-400 mb-4">
+              <span className="text-green-400">Technical Summary</span>
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-4 neon-text-cyan font-mono">
-              FULL-STACK_NEURAL_ARCHITECTURE
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 text-blue-400">
+              Full-Stack Development & Operations
             </h3>
             <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-4xl mx-auto px-4 leading-relaxed">
-              From <span className="neon-text-cyan">containerized microservices</span> to 
-              <span className="neon-text-pink"> AI-powered applications</span>, I synthesize 
-              <span className="neon-text-green">quantum development practices</span>, 
+              From <span className="text-blue-400">containerized microservices</span> to 
+              <span className="text-purple-400"> AI-powered applications</span>, I combine 
+              <span className="text-green-400">modern development practices</span>, 
               robust infrastructure, and cutting-edge machine learning to deliver 
-              <span className="neon-text-cyan">scalable, production-ready solutions</span>.
+              <span className="text-blue-400">scalable, production-ready solutions</span>.
             </p>
-            <div className="absolute inset-0 holographic opacity-20"></div>
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-pulse"></div>
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
           </div>
         </div>
       </div>

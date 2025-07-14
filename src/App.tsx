@@ -92,11 +92,9 @@ function App() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex items-center space-x-3">
-                <img 
-                  src="/src/assets/priyansh-high-resolution-logo-removebg-preview.png" 
-                  alt="Priyansh Chandwani Logo" 
-                  className="w-24 h-16 sm:w-28 sm:h-18 md:w-32 md:h-20 lg:w-36 lg:h-22 object-contain transition-all duration-300 filter brightness-0 invert neon-glow-cyan"
-                />
+                <div className="w-24 h-16 sm:w-28 sm:h-18 md:w-32 md:h-20 lg:w-36 lg:h-22 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-xl transition-all duration-300 shadow-lg">
+                  PC
+                </div>
               </div>
             </div>
 
@@ -108,26 +106,26 @@ function App() {
                   onClick={() => scrollToSection(item.id)}
                   className={`relative px-2 py-2 xl:px-3 text-sm font-medium font-mono transition-colors duration-300 uppercase tracking-wider ${
                     activeSection === item.id
-                      ? 'neon-text-cyan'
-                      : 'text-gray-300 hover:neon-text-cyan'
+                      ? 'text-blue-400'
+                      : 'text-gray-300 hover:text-blue-400'
                   }`}
                 >
                   {item.label}
                   {activeSection === item.id && (
-                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full neon-glow-cyan"></div>
+                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full"></div>
                   )}
                 </button>
               ))}
               <button
                 onClick={() => window.open('#', '_blank')}
-                className="cyber-button flex items-center space-x-2 px-3 py-2 xl:px-4 text-sm"
+                className="bg-blue-600 hover:bg-blue-700 text-white flex items-center space-x-2 px-3 py-2 xl:px-4 text-sm rounded-lg font-semibold transition-all duration-300"
               >
                 <Download className="w-3 h-3 xl:w-4 xl:h-4" />
                 <span>Resume</span>
               </button>
               <button
                 onClick={toggleDarkMode}
-                className="p-2 rounded-lg transition-colors duration-300 bg-gray-800/50 text-yellow-400 neon-glow-orange hover:neon-glow-yellow"
+                className="p-2 rounded-lg transition-colors duration-300 bg-gray-800/50 text-yellow-400 hover:text-yellow-300"
               >
                 <Sun className="w-4 h-4 xl:w-5 xl:h-5" />
               </button>
@@ -137,13 +135,13 @@ function App() {
             <div className="lg:hidden flex items-center space-x-3 sm:space-x-4">
               <button
                 onClick={toggleDarkMode}
-                className="p-2 rounded-lg transition-colors duration-300 bg-gray-800/50 text-yellow-400 neon-glow-orange"
+                className="p-2 rounded-lg transition-colors duration-300 bg-gray-800/50 text-yellow-400 hover:text-yellow-300"
               >
                 <Sun className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-lg bg-gray-800/50 text-cyan-400 neon-glow-cyan"
+                className="p-2 rounded-lg bg-gray-800/50 text-blue-400"
               >
                 {isMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5" />}
               </button>
@@ -153,7 +151,7 @@ function App() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-black/95 border-t border-cyan-400/30 cyber-card">
+          <div className="lg:hidden bg-black/95 border-t border-blue-400/30 bg-white/5 backdrop-blur-sm">
             <div className="px-3 pt-3 pb-4 space-y-2 sm:px-4">
               {navItems.map((item) => (
                 <button
@@ -161,8 +159,8 @@ function App() {
                   onClick={() => scrollToSection(item.id)}
                   className={`block w-full text-left px-3 py-2.5 text-base font-medium font-mono rounded-md transition-colors duration-300 uppercase tracking-wider ${
                     activeSection === item.id
-                      ? 'neon-text-cyan bg-cyan-900/20'
-                      : 'text-gray-300 hover:neon-text-cyan'
+                      ? 'text-blue-400 bg-blue-900/20'
+                      : 'text-gray-300 hover:text-blue-400'
                   }`}
                 >
                   {item.label}
@@ -170,7 +168,7 @@ function App() {
               ))}
               <button
                 onClick={() => window.open('/src/assets/resumemain(1).pdf', '_blank')}
-                className="cyber-button flex items-center justify-center space-x-2 w-full px-3 py-2.5 rounded-md transition-all duration-300 mt-3"
+                className="bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center space-x-2 w-full px-3 py-2.5 rounded-md transition-all duration-300 mt-3 font-semibold"
               >
                 <Download className="w-4 h-4" />
                 <span>Resume</span>
@@ -197,7 +195,7 @@ function App() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-50 p-2.5 sm:p-3 bg-gradient-to-r from-cyan-600 to-purple-600 text-white rounded-full shadow-lg hover:from-cyan-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-110 neon-glow-cyan cyber-button"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-50 p-2.5 sm:p-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-110"
         >
           <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>

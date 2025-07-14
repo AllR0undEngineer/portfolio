@@ -78,16 +78,16 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
         <AnimatedSection direction="up">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-mono">
-              <span className="neon-text-cyan neon-pulse">{'>'} TRANSMISSION.establish()</span>
+              <span className="text-blue-500">Get In Touch</span>
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mx-auto rounded-full neon-glow-cyan"></div>
-            <div className="mt-6 terminal-text">
-              <span className="neon-text-green">INITIALIZING:</span> 
-              <span className="neon-text-cyan ml-2">COMMUNICATION_PROTOCOL</span>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 mx-auto rounded-full"></div>
+            <div className="mt-6 text-gray-400">
+              <span className="text-green-500">Let's</span> 
+              <span className="text-blue-500 ml-2">start a conversation</span>
             </div>
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4 mt-4">
-              Have a <span className="neon-text-cyan">project in mind</span> or want to discuss 
-              <span className="neon-text-pink"> opportunities</span>? I'd love to hear from you!
+              Have a <span className="text-blue-400">project in mind</span> or want to discuss 
+              <span className="text-purple-400"> opportunities</span>? I'd love to hear from you!
             </p>
           </div>
         </AnimatedSection>
@@ -96,68 +96,66 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
           {/* Contact Information */}
           <AnimatedSection direction="left" delay={200}>
             <div className="space-y-8">
-              <div className="cyber-card p-6 sm:p-8 rounded-2xl neon-border relative overflow-hidden">
-                <div className="terminal-text mb-4">
-                  <span className="neon-text-green">{'>'} connection_info.load()</span>
+              <div className="bg-white/5 backdrop-blur-sm border border-gray-600/30 rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+                <div className="text-gray-400 mb-4">
+                  <span className="text-green-400">Contact Information</span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 neon-text-cyan font-mono">
-                  LET'S_CONNECT
+                <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-blue-400">
+                  Let's Connect
                 </h3>
                 <p className="text-sm sm:text-base md:text-lg mb-6 sm:mb-8 text-gray-300 leading-relaxed">
-                  I'm always open to discussing <span className="neon-text-cyan">new opportunities</span>, 
-                  collaborating on <span className="neon-text-pink">interesting projects</span>, 
-                  or simply having a conversation about <span className="neon-text-green">technology and innovation</span>.
+                  I'm always open to discussing <span className="text-blue-400">new opportunities</span>, 
+                  collaborating on <span className="text-purple-400">interesting projects</span>, 
+                  or simply having a conversation about <span className="text-green-400">technology and innovation</span>.
                 </p>
-                <div className="absolute inset-0 holographic opacity-20"></div>
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
               </div>
 
               <div className="space-y-6">
-                <div className="cyber-card p-4 sm:p-6 rounded-xl neon-border-animated relative overflow-hidden">
+                <div className="bg-white/5 backdrop-blur-sm border border-gray-600/30 rounded-xl p-4 sm:p-6 shadow-xl relative overflow-hidden">
                   <div className="flex items-center space-x-4">
                     <div className="flex-shrink-0">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center neon-glow-cyan">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
                         <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-base sm:text-lg font-semibold neon-text-cyan font-mono">
-                        EMAIL_ADDRESS
+                      <h4 className="text-base sm:text-lg font-semibold text-blue-400">
+                        Email Address
                       </h4>
                       <a 
                         href="mailto:priyanshchandwani1st@gmail.com"
-                        className="text-sm sm:text-base md:text-lg text-gray-300 hover:neon-text-cyan transition-colors duration-300 break-all font-mono"
+                        className="text-sm sm:text-base md:text-lg text-gray-300 hover:text-blue-400 transition-colors duration-300 break-all"
                       >
                         priyanshchandwani1st@gmail.com
                       </a>
                     </div>
                   </div>
-                  <div className="absolute inset-0 holographic opacity-20"></div>
                 </div>
 
-                <div className="cyber-card p-4 sm:p-6 rounded-xl neon-border-animated relative overflow-hidden">
+                <div className="bg-white/5 backdrop-blur-sm border border-gray-600/30 rounded-xl p-4 sm:p-6 shadow-xl relative overflow-hidden">
                   <div className="flex items-center space-x-4">
                     <div className="flex-shrink-0">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center neon-glow-green">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
                         <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-base sm:text-lg font-semibold neon-text-green font-mono">
-                        LOCATION_STATUS
+                      <h4 className="text-base sm:text-lg font-semibold text-green-400">
+                        Location
                       </h4>
-                      <p className="text-sm sm:text-base md:text-lg text-gray-300 font-mono">
+                      <p className="text-sm sm:text-base md:text-lg text-gray-300">
                         Available for remote opportunities
                       </p>
                     </div>
                   </div>
-                  <div className="absolute inset-0 holographic opacity-20"></div>
                 </div>
               </div>
 
               {/* Social Links */}
-              <div className="cyber-card p-4 sm:p-6 rounded-xl neon-border relative overflow-hidden">
-                <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 neon-text-pink font-mono">
-                  SOCIAL_NETWORKS.connect()
+              <div className="bg-white/5 backdrop-blur-sm border border-gray-600/30 rounded-xl p-4 sm:p-6 shadow-xl relative overflow-hidden">
+                <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-purple-400">
+                  Connect on Social Media
                 </h4>
                 <div className="flex space-x-4 sm:space-x-6">
                   {socialLinks.map((link) => (
@@ -166,7 +164,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group p-2.5 sm:p-3 rounded-full transition-all duration-300 transform hover:scale-110 cyber-card border-2 relative overflow-hidden"
+                      className="group p-2.5 sm:p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-white/10 backdrop-blur-sm border-2 relative overflow-hidden shadow-lg"
                       style={{ borderColor: link.neonColor }}
                     >
                       <div 
@@ -184,36 +182,35 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                     </a>
                   ))}
                 </div>
-                <div className="absolute inset-0 holographic opacity-20"></div>
               </div>
             </div>
           </AnimatedSection>
 
           {/* Contact Form */}
           <AnimatedSection direction="right" delay={400}>
-            <div className="cyber-card p-6 sm:p-8 rounded-2xl neon-border-animated relative overflow-hidden">
-              <div className="terminal-text mb-4">
-                <span className="neon-text-green">{'>'} message_composer.exe</span>
+            <div className="bg-white/5 backdrop-blur-sm border border-gray-600/30 rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+              <div className="text-gray-400 mb-4">
+                <span className="text-green-400">Send Message</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 neon-text-cyan font-mono">
-                SEND_MESSAGE
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-blue-400">
+                Send Me a Message
               </h3>
 
               {submitted ? (
                 <div className="text-center py-6 sm:py-8">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 border-2 border-green-400 neon-glow-green">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 border-2 border-green-400 shadow-lg">
                     <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-green-400" />
                   </div>
-                  <h4 className="text-lg sm:text-xl font-semibold neon-text-green mb-2 font-mono">MESSAGE_SENT!</h4>
-                  <p className="text-sm sm:text-base text-gray-300 font-mono">
+                  <h4 className="text-lg sm:text-xl font-semibold text-green-400 mb-2">Message Sent!</h4>
+                  <p className="text-sm sm:text-base text-gray-300">
                     Thank you for reaching out. I'll get back to you soon!
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-1.5 sm:mb-2 text-cyan-400 font-mono">
-                      USER_NAME
+                    <label htmlFor="name" className="block text-sm font-medium mb-1.5 sm:mb-2 text-blue-400">
+                      Your Name
                     </label>
                     <input
                       type="text"
@@ -222,14 +219,14 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg border-2 border-cyan-400/50 bg-gray-900/50 text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 text-sm sm:text-base font-mono neon-glow-cyan"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg border-2 border-blue-400/50 bg-gray-900/50 text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all duration-300 text-sm sm:text-base"
                       placeholder="Enter your name"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-1.5 sm:mb-2 text-pink-400 font-mono">
-                      EMAIL_ADDRESS
+                    <label htmlFor="email" className="block text-sm font-medium mb-1.5 sm:mb-2 text-purple-400">
+                      Email Address
                     </label>
                     <input
                       type="email"
@@ -238,14 +235,14 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg border-2 border-pink-400/50 bg-gray-900/50 text-white placeholder-gray-400 focus:border-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-400/20 transition-all duration-300 text-sm sm:text-base font-mono neon-glow-pink"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg border-2 border-purple-400/50 bg-gray-900/50 text-white placeholder-gray-400 focus:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 text-sm sm:text-base"
                       placeholder="Enter your email"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-1.5 sm:mb-2 text-green-400 font-mono">
-                      MESSAGE_CONTENT
+                    <label htmlFor="message" className="block text-sm font-medium mb-1.5 sm:mb-2 text-green-400">
+                      Message
                     </label>
                     <textarea
                       id="message"
@@ -254,7 +251,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                       onChange={handleInputChange}
                       required
                       rows={4}
-                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg border-2 border-green-400/50 bg-gray-900/50 text-white placeholder-gray-400 focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/20 transition-all duration-300 text-sm sm:text-base font-mono resize-none neon-glow-green"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-lg border-2 border-green-400/50 bg-gray-900/50 text-white placeholder-gray-400 focus:border-green-400 focus:outline-none focus:ring-2 focus:ring-green-400/20 transition-all duration-300 text-sm sm:text-base resize-none"
                       placeholder="Tell me about your project or opportunity..."
                     />
                   </div>
@@ -262,7 +259,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full cyber-button flex items-center justify-center space-x-2 px-4 py-2.5 sm:px-6 sm:py-3 font-mono font-semibold transition-all duration-300 text-sm sm:text-base ${
+                    className={`w-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center space-x-2 px-4 py-2.5 sm:px-6 sm:py-3 font-semibold transition-all duration-300 text-sm sm:text-base rounded-lg ${
                       isSubmitting 
                         ? 'opacity-50 cursor-not-allowed' 
                         : 'transform hover:scale-105'
@@ -270,19 +267,19 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin neon-glow-cyan"></div>
-                        <span>TRANSMITTING...</span>
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        <span>Sending...</span>
                       </>
                     ) : (
                       <>
                         <Send className="w-4 h-4 sm:w-5 sm:h-5" />
-                        <span>SEND_MESSAGE</span>
+                        <span>Send Message</span>
                       </>
                     )}
                   </button>
                 </form>
               )}
-              <div className="absolute inset-0 holographic opacity-20"></div>
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
             </div>
           </AnimatedSection>
         </div>

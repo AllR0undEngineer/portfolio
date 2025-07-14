@@ -21,45 +21,45 @@ interface Project {
 const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
   const projects: Project[] = [
     {
-      title: 'DEVOPS_COMMAND_CENTER',
-      description: 'A quantum-enhanced Docker and Linux control matrix that enables remote system management via encrypted SSH tunnels. Features real-time neural monitoring, container orchestration, and automated deployment pipelines.',
+      title: 'DevOps Command Center',
+      description: 'A comprehensive Docker and Linux management platform that enables remote system administration via secure SSH connections. Features real-time monitoring, container orchestration, and automated deployment pipelines.',
       icon: <Server className="w-8 h-8" />,
       technologies: ['Docker', 'Linux', 'SSH', 'Python', 'Flask', 'JavaScript'],
       githubUrl: '#',
       liveUrl: '#',
       featured: true,
-      neonColor: '#00ffff',
+      neonColor: '#3b82f6',
       status: 'ACTIVE'
     },
     {
-      title: 'VIRAL_PREDICTION_ENGINE',
-      description: 'An ML-powered neural network that predicts YouTube video views in the first week using quantum algorithms, metadata analysis, and temporal pattern recognition with 94.7% accuracy.',
+      title: 'Video Performance Predictor',
+      description: 'An ML-powered system that predicts YouTube video views in the first week using advanced algorithms, metadata analysis, and temporal pattern recognition with 94.7% accuracy.',
       icon: <BarChart3 className="w-8 h-8" />,
       technologies: ['Python', 'Scikit-learn', 'Streamlit', 'Pandas', 'NumPy'],
       githubUrl: '#',
       liveUrl: '#',
       featured: true,
-      neonColor: '#ff00ff',
+      neonColor: '#8b5cf6',
       status: 'DEPLOYED'
     },
     {
-      title: 'AI_LEGAL_NEXUS',
-      description: 'A cybernetic AI assistant powered by generative neural networks that provides legal advice and document analysis. Features quantum natural language processing and contextual understanding matrices.',
+      title: 'AI Legal Assistant',
+      description: 'An intelligent AI assistant powered by advanced language models that provides legal guidance and document analysis. Features sophisticated natural language processing and contextual understanding.',
       icon: <Scale className="w-8 h-8" />,
       technologies: ['Python', 'OpenAI', 'LangChain', 'Streamlit', 'NLP'],
       githubUrl: '#',
       liveUrl: '#',
       featured: true,
-      neonColor: '#00ff00',
+      neonColor: '#10b981',
       status: 'BETA'
     }
   ];
 
   // Placeholder projects for future expansion
   const placeholderProjects = [
-    { title: 'QUANTUM_PROJECT_ALPHA', description: 'Neural network in development...', featured: false, neonColor: '#ff8000' },
-    { title: 'CYBER_PROJECT_BETA', description: 'AI system initializing...', featured: false, neonColor: '#8000ff' },
-    { title: 'MATRIX_PROJECT_GAMMA', description: 'Quantum algorithm loading...', featured: false, neonColor: '#ff0080' }
+    { title: 'Project Alpha', description: 'Machine learning project in development...', featured: false, neonColor: '#f59e0b' },
+    { title: 'Project Beta', description: 'AI system in planning phase...', featured: false, neonColor: '#ef4444' },
+    { title: 'Project Gamma', description: 'Advanced algorithm in research...', featured: false, neonColor: '#ec4899' }
   ];
 
   return (
@@ -72,17 +72,17 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
         <AnimatedSection direction="up">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-mono">
-              <span className="neon-text-cyan neon-pulse">&gt; CODE_VAULT.access()</span>
+              <span className="text-blue-500">Featured Projects</span>
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mx-auto rounded-full neon-glow-cyan"></div>
-            <div className="mt-6 terminal-text">
-              <span className="neon-text-green">ACCESSING:</span> 
-              <span className="neon-text-cyan ml-2">FEATURED_PROJECTS.db</span>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 mx-auto rounded-full"></div>
+            <div className="mt-6 text-gray-400">
+              <span className="text-green-500">Showcasing</span> 
+              <span className="text-blue-500 ml-2">my latest work</span>
             </div>
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4 mt-4">
-              Showcasing <span className="neon-text-cyan">innovative solutions</span> that bridge the gap between 
-              <span className="neon-text-pink">development</span>, <span className="neon-text-green">operations</span>, and 
-              <span className="neon-text-cyan">artificial intelligence</span>
+              Showcasing <span className="text-blue-400">innovative solutions</span> that bridge the gap between 
+              <span className="text-purple-400">development</span>, <span className="text-green-400">operations</span>, and 
+              <span className="text-blue-400">artificial intelligence</span>
             </p>
           </div>
         </AnimatedSection>
@@ -96,16 +96,15 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
               delay={index * 200}
             >
               <div className="group relative overflow-hidden rounded-2xl transition-all duration-300 transform hover:scale-105 cyber-card neon-border-animated">
-                {/* Status Indicator */}
+                <div className="group relative overflow-hidden rounded-2xl transition-all duration-300 transform hover:scale-105 bg-white/5 backdrop-blur-sm border border-gray-600/30 shadow-xl">
+                  {/* Status Indicator */}
                 <div className="absolute top-4 right-4 z-20">
                   <div 
-                    className="px-2 py-1 rounded-full text-xs font-mono font-bold border"
+                    className="px-2 py-1 rounded-full text-xs font-semibold border shadow-lg"
                     style={{
                       color: project.neonColor,
                       borderColor: project.neonColor,
-                      background: `${project.neonColor}20`,
-                      textShadow: `0 0 5px ${project.neonColor}`,
-                      boxShadow: `0 0 10px ${project.neonColor}`
+                      background: `${project.neonColor}20`
                     }}
                   >
                     {project.status}
@@ -125,7 +124,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
                     style={{
                       background: `linear-gradient(45deg, ${project.neonColor}30, ${project.neonColor}60)`,
                       border: `2px solid ${project.neonColor}`,
-                      boxShadow: `0 0 20px ${project.neonColor}`
+                      boxShadow: `0 4px 15px ${project.neonColor}40`
                     }}
                   >
                     <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 relative z-10">
@@ -134,15 +133,13 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
                         style: { color: project.neonColor }
                       })}
                     </div>
-                    <div className="absolute inset-0 holographic opacity-40"></div>
                   </div>
 
                   {/* Project Title */}
                   <h3 
-                    className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 font-mono"
+                    className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4"
                     style={{ 
-                      color: project.neonColor,
-                      textShadow: `0 0 10px ${project.neonColor}`
+                      color: project.neonColor
                     }}
                   >
                     {project.title}
@@ -158,7 +155,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 sm:px-3 rounded-full text-xs sm:text-sm font-mono font-medium border"
+                        className="px-2 py-1 sm:px-3 rounded-full text-xs sm:text-sm font-medium border"
                         style={{
                           color: project.neonColor,
                           borderColor: `${project.neonColor}60`,
@@ -174,21 +171,30 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
                   <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
                     <a
                       href={project.githubUrl}
-                      className="cyber-button flex items-center justify-center space-x-2 px-3 py-2 sm:px-4 rounded-lg font-mono font-medium transition-all duration-300 text-sm sm:text-base border-gray-500 text-gray-300 hover:bg-gray-500"
+                      className="flex items-center justify-center space-x-2 px-3 py-2 sm:px-4 rounded-lg font-medium transition-all duration-300 text-sm sm:text-base border border-gray-500 text-gray-300 hover:bg-gray-500 hover:text-white"
                     >
                       <Github className="w-3 h-3 sm:w-4 sm:h-4" />
-                      <span>SOURCE</span>
+                      <span>View Code</span>
                     </a>
                     <a
                       href={project.liveUrl}
-                      className="cyber-button flex items-center justify-center space-x-2 px-3 py-2 sm:px-4 rounded-lg font-mono font-medium transition-all duration-300 text-sm sm:text-base"
+                      className="flex items-center justify-center space-x-2 px-3 py-2 sm:px-4 rounded-lg font-medium transition-all duration-300 text-sm sm:text-base border"
                       style={{
                         borderColor: project.neonColor,
-                        color: project.neonColor
+                        color: project.neonColor,
+                        background: 'transparent'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = project.neonColor;
+                        e.currentTarget.style.color = 'white';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                        e.currentTarget.style.color = project.neonColor;
                       }}
                     >
                       <Play className="w-3 h-3 sm:w-4 sm:h-4" />
-                      <span>EXECUTE</span>
+                      <span>Live Demo</span>
                     </a>
                   </div>
                 </div>
@@ -197,10 +203,10 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
                 <div 
                   className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{ 
-                    background: project.neonColor,
-                    boxShadow: `0 0 10px ${project.neonColor}`
+                    background: project.neonColor
                   }}
                 ></div>
+                </div>
               </div>
             </AnimatedSection>
           ))}
@@ -212,7 +218,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
             {placeholderProjects.map((project, index) => (
               <div
                 key={project.title}
-                className="p-4 sm:p-6 rounded-xl border-2 border-dashed transition-all duration-300 cyber-card relative overflow-hidden"
+                className="p-4 sm:p-6 rounded-xl border-2 border-dashed transition-all duration-300 bg-white/5 backdrop-blur-sm relative overflow-hidden shadow-lg"
                 style={{ borderColor: `${project.neonColor}40` }}
               >
                 <div className="text-center space-y-4">
@@ -229,19 +235,17 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
                     />
                   </div>
                   <h3 
-                    className="text-lg sm:text-xl font-semibold font-mono"
+                    className="text-lg sm:text-xl font-semibold"
                     style={{ 
-                      color: project.neonColor,
-                      textShadow: `0 0 5px ${project.neonColor}`
+                      color: project.neonColor
                     }}
                   >
                     {project.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-gray-400 font-mono">
+                  <p className="text-sm sm:text-base text-gray-400">
                     {project.description}
                   </p>
                 </div>
-                <div className="absolute inset-0 holographic opacity-20"></div>
               </div>
             ))}
           </div>
@@ -250,16 +254,16 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
         {/* Call to Action */}
         <AnimatedSection direction="up" delay={800}>
           <div className="text-center">
-            <div className="terminal-text mb-6">
-              <span className="neon-text-green">QUERY:</span>
-              <span className="neon-text-cyan ml-2">MORE_PROJECTS_AVAILABLE?</span>
+            <div className="text-gray-400 mb-6">
+              <span className="text-green-400">Want to see more?</span>
+              <span className="text-blue-400 ml-2">Check out my GitHub</span>
             </div>
             <a
               href="https://github.com/AllR0undEngineer"
-              className="cyber-button inline-flex items-center space-x-2 px-6 py-3 sm:px-8 font-mono font-semibold transition-all duration-300 transform hover:scale-105 text-sm sm:text-base border-cyan-400 text-cyan-400 hover:bg-cyan-400 group"
+              className="inline-flex items-center space-x-2 px-6 py-3 sm:px-8 font-semibold transition-all duration-300 transform hover:scale-105 text-sm sm:text-base border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded-lg group"
             >
               <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-              <span>ACCESS_FULL_REPOSITORY</span>
+              <span>View All Projects</span>
               <Zap className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-pulse" />
             </a>
           </div>

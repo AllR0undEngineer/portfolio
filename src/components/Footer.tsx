@@ -36,11 +36,9 @@ const Footer: React.FC<FooterProps> = ({ darkMode }) => {
           {/* Logo/Name */}
           <div className="text-center">
             <div className="flex items-center justify-center space-x-3 mb-2">
-              <img 
-                src="/src/assets/priyansh-high-resolution-logo-removebg-preview.png" 
-                alt="Priyansh Chandwani Logo" 
-                className="w-8 h-8 object-contain filter brightness-0 invert"
-              />
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                P
+              </div>
               <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Priyansh Chandwani
               </h3>
