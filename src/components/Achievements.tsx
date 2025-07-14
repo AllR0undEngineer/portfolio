@@ -155,8 +155,8 @@ const Achievements: React.FC<AchievementsProps> = ({ darkMode }) => {
                       boxShadow: `0 0 10px ${achievement.neonColor}`
                     }}
                   ></div>
-                </div>
-              </div>
+                </div> 
+               </div>
             </AnimatedSection>
           ))}
         </div>
