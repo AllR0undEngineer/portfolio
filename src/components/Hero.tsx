@@ -174,7 +174,9 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
               <div className="relative">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight">
                   <span className="block text-white mb-2">INITIALIZING...</span>
-                  <span className="block neon-text-cyan neon-pulse glitch" data-text="PRIYANSH CHANDWANI">
+                  <span className="block text-white font-bold drop-shadow-lg" style={{ 
+                    textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,255,255,0.5)' 
+                  }}>
                     PRIYANSH CHANDWANI
                   </span>
                 </h1>
@@ -263,12 +265,9 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                       className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full p-1 sm:p-1.5 md:p-2 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300 neon-glow-cyan cyber-card"
                       onClick={() => scrollToSection('home')}
                     >
-                      <img 
-                        src="/src/assets/priyansh-high-resolution-logo-removebg-preview.png" 
-                        alt="Neural Core" 
-                        className="w-full h-full object-contain filter brightness-0 invert"
-                      />
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400/20 to-purple-400/20 animate-pulse"></div>
+                    <div className="w-full h-full bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                      P
+                    </div>
                     </div>
                   </div>
                 </div>
