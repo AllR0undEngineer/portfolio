@@ -78,7 +78,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
         <AnimatedSection direction="up">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-mono">
-              <span className="neon-text-cyan neon-pulse">> TRANSMISSION.establish()</span>
+              <span className="neon-text-cyan neon-pulse">{'>'} TRANSMISSION.establish()</span>
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mx-auto rounded-full neon-glow-cyan"></div>
             <div className="mt-6 terminal-text">
@@ -98,7 +98,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
             <div className="space-y-8">
               <div className="cyber-card p-6 sm:p-8 rounded-2xl neon-border relative overflow-hidden">
                 <div className="terminal-text mb-4">
-                  <span className="neon-text-green">> connection_info.load()</span>
+                  <span className="neon-text-green">{'>'} connection_info.load()</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 neon-text-cyan font-mono">
                   LET'S_CONNECT
@@ -193,7 +193,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
           <AnimatedSection direction="right" delay={400}>
             <div className="cyber-card p-6 sm:p-8 rounded-2xl neon-border-animated relative overflow-hidden">
               <div className="terminal-text mb-4">
-                <span className="neon-text-green">> message_composer.exe</span>
+                <span className="neon-text-green">{'>'} message_composer.exe</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 neon-text-cyan font-mono">
                 SEND_MESSAGE
