@@ -33,7 +33,7 @@ const Experience: React.FC<ExperienceProps> = ({ darkMode }) => {
         <AnimatedSection direction="up">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-mono">
-              <span className="neon-text-cyan neon-pulse">{'>'} DATA_LOGS.access()</span>
+              <span className="neon-text-cyan neon-pulse">&gt; DATA_LOGS.access()</span>
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mx-auto rounded-full neon-glow-cyan"></div>
             <div className="mt-6 terminal-text">
@@ -137,7 +137,7 @@ const Experience: React.FC<ExperienceProps> = ({ darkMode }) => {
           <div className="text-center mt-16">
             <div className="cyber-card p-6 sm:p-8 rounded-2xl neon-border-animated relative overflow-hidden">
               <div className="terminal-text mb-4">
-                <span className="neon-text-green">{'>'} career_status.exe</span>
+                <span className="neon-text-green">&gt; career_status.exe</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold mb-4 neon-text-cyan font-mono">
                 SEEKING_NEW_OPPORTUNITIES
