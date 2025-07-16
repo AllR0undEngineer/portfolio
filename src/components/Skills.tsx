@@ -84,7 +84,7 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
 
         {/* Skills Matrix Container */}
         <div 
-          className="relative min-h-[600px] bg-white/5 backdrop-blur-sm border border-gray-600/30 rounded-xl p-4 sm:p-6 md:p-8 shadow-xl"
+          className="relative min-h-[600px] bg-white/5 backdrop-blur-sm border border-gray-600/30 rounded-xl p-4 sm:p-6 md:p-8 shadow-xl mb-8"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -226,14 +226,14 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
           </div>
 
           {/* Grid State - Shown on Hover */}
-          <div className={`absolute inset-8 transition-all duration-1000 ease-in-out ${
+          <div className={`absolute inset-4 sm:inset-6 md:inset-8 transition-all duration-1000 ease-in-out ${
             isHovered ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-          } overflow-visible`}>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+          }`}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-3 md:gap-4 lg:gap-6 pb-8">
               {skills.map((skill, index) => (
                 <div
                   key={`grid-${skill.name}`}
-                  className="group p-2 sm:p-3 md:p-4 lg:p-6 rounded-xl transition-all duration-500 transform hover:scale-105 hover:z-10 bg-white/5 backdrop-blur-sm border border-gray-600/30 shadow-xl relative overflow-visible"
+                  className="group p-2 sm:p-3 md:p-4 lg:p-6 rounded-xl transition-all duration-500 transform hover:scale-105 hover:z-20 bg-white/5 backdrop-blur-sm border border-gray-600/30 shadow-xl relative"
                   style={{
                     animationDelay: `${index * 0.05}s`,
                     borderColor: skill.neonColor
@@ -309,7 +309,7 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
         </div>
 
         {/* System Summary */}
-        <div className="mt-16 text-center">
+        <div className="mt-8 text-center relative z-10">
           <div className="bg-white/5 backdrop-blur-sm border border-gray-600/30 rounded-xl p-8 shadow-xl relative overflow-hidden">
             <div className="text-gray-400 mb-4">
               <span className="text-green-400">Technical Summary</span>
