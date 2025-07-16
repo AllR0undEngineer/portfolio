@@ -84,7 +84,7 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
 
         {/* Skills Matrix Container */}
         <div 
-          className="relative min-h-[500px] overflow-hidden bg-white/5 backdrop-blur-sm border border-gray-600/30 rounded-xl p-8 shadow-xl"
+          className="relative min-h-[600px] bg-white/5 backdrop-blur-sm border border-gray-600/30 rounded-xl p-4 sm:p-6 md:p-8 shadow-xl"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -228,12 +228,12 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
           {/* Grid State - Shown on Hover */}
           <div className={`absolute inset-8 transition-all duration-1000 ease-in-out ${
             isHovered ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-          }`}>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 md:gap-6">
+          } overflow-visible`}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
               {skills.map((skill, index) => (
                 <div
                   key={`grid-${skill.name}`}
-                  className="group p-3 sm:p-4 md:p-6 rounded-xl transition-all duration-500 transform hover:scale-105 bg-white/5 backdrop-blur-sm border border-gray-600/30 shadow-xl relative overflow-hidden"
+                  className="group p-2 sm:p-3 md:p-4 lg:p-6 rounded-xl transition-all duration-500 transform hover:scale-105 hover:z-10 bg-white/5 backdrop-blur-sm border border-gray-600/30 shadow-xl relative overflow-visible"
                   style={{
                     animationDelay: `${index * 0.05}s`,
                     borderColor: skill.neonColor
@@ -241,14 +241,14 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
                 >
                   {/* Skill Icon */}
                   <div 
-                    className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto mb-2 sm:mb-3 md:mb-4 rounded-xl p-2 sm:p-2.5 md:p-3 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110 relative"
+                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto mb-2 sm:mb-3 md:mb-4 rounded-xl p-1.5 sm:p-2 md:p-2.5 lg:p-3 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110 relative"
                     style={{
                       background: `linear-gradient(45deg, ${skill.neonColor}30, ${skill.neonColor}60)`,
                       border: `2px solid ${skill.neonColor}`,
                       boxShadow: `0 4px 15px ${skill.neonColor}40`
                     }}
                   >
-                    <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8">
                       {React.cloneElement(skill.icon as React.ReactElement, { 
                         className: "w-full h-full",
                         style: { color: skill.neonColor }
@@ -257,20 +257,20 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
                   </div>
                   
                   {/* Skill Name */}
-                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-center mb-1 sm:mb-2"
+                  <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-center mb-1 sm:mb-2"
                       style={{ color: skill.neonColor }}>
                     {skill.name}
                   </h3>
                   
                   {/* Skill Description */}
-                  <p className="text-xs sm:text-sm text-center text-gray-400 hidden sm:block mb-2">
+                  <p className="text-xs sm:text-sm text-center text-gray-400 hidden md:block mb-2 leading-tight">
                     {skill.description}
                   </p>
 
                   {/* Category Badge */}
                   <div className="flex justify-center mt-1 sm:mt-2 md:mt-3">
                     <span 
-                      className="px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full text-xs font-semibold border"
+                      className="px-1 py-0.5 sm:px-1.5 sm:py-0.5 md:px-2 md:py-1 rounded-full text-xs font-semibold border"
                       style={{ 
                         color: skill.neonColor,
                         borderColor: skill.neonColor,
@@ -300,7 +300,7 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
           {/* Interaction Prompt */}
           <div className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 transition-opacity duration-300 ${
             isHovered ? 'opacity-0' : 'opacity-100'
-          }`}>
+          } pointer-events-none`}>
             <div className="text-center text-gray-400">
               <span className="text-blue-400">Hover to view:</span>
               <span className="text-green-400 ml-2">Detailed Skills</span>
