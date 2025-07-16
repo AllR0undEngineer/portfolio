@@ -309,6 +309,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                              color: point.color,
                              textShadow: `0 0 5px ${point.color}40`
                            }}
+                      >
                         {point.label}
                       </div>
                       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1 w-2 h-2 rotate-45"
