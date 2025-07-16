@@ -79,7 +79,7 @@ const Achievements: React.FC<AchievementsProps> = ({ darkMode }) => {
               delay={index * 150}
             >
               <div className="group relative overflow-hidden rounded-2xl transition-all duration-300 transform hover:scale-105 cyber-card neon-border-animated">
-              <div className="group relative overflow-hidden rounded-2xl transition-all duration-300 transform hover:scale-105 bg-white/5 backdrop-blur-sm border border-gray-600/30 shadow-xl">
+                <div className="group relative overflow-hidden rounded-2xl transition-all duration-300 transform hover:scale-105 bg-white/5 backdrop-blur-sm border border-gray-600/30 shadow-xl">
                 <div 
                   className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-300"
                   style={{ background: `linear-gradient(45deg, ${achievement.neonColor}, transparent)` }}
@@ -155,6 +155,7 @@ const Achievements: React.FC<AchievementsProps> = ({ darkMode }) => {
                       boxShadow: `0 0 10px ${achievement.neonColor}`
                     }}
                   ></div>
+                </div>
                 </div>
               </div>
             </AnimatedSection>

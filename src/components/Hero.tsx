@@ -282,7 +282,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                     onMouseEnter={() => setHoveredPoint(point.id)}
                     onMouseLeave={() => setHoveredPoint(null)}
                   >
-                  <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                    <div 
                       className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 group-hover:scale-125 transform hover:rotate-12 cyber-card"
                       style={{
                         background: `linear-gradient(45deg, ${point.color}, ${point.color}cc)`,
@@ -309,7 +309,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                              color: point.color,
                              textShadow: `0 0 5px ${point.color}40`
                            }}
-                      >
+                    >
                         {point.label}
                       </div>
                       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1 w-2 h-2 rotate-45"
