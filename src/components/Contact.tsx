@@ -69,7 +69,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-black via-purple-900 to-gray-900 relative overflow-hidden">
+    <section id="contact" className="py-20 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 cyber-grid opacity-20"></div>
       <div className="absolute inset-0 circuit-pattern opacity-15"></div>

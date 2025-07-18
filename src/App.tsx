@@ -65,7 +65,10 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-purple-900 text-white cyber-grid relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-purple-900 text-white relative overflow-hidden">
+      {/* Unified Background with Cyber Grid */}
+      <div className="fixed inset-0 cyber-grid opacity-30 pointer-events-none z-0"></div>
+      
       {/* Quantum Particles Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {[...Array(50)].map((_, i) => (
@@ -84,10 +87,10 @@ function App() {
       </div>
       
       {/* Scanning Lines */}
-      <div className="scan-lines fixed inset-0 pointer-events-none z-10"></div>
+      <div className="scan-lines fixed inset-0 pointer-events-none z-20"></div>
       
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/90 backdrop-blur-md border-b border-cyan-400/30 cyber-card">
+      <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/90 backdrop-blur-md border-b border-cyan-400/30 cyber-card relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">

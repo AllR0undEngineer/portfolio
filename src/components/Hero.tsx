@@ -129,7 +129,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-black cyber-grid">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Matrix Rain Background */}
       <div className="matrix-rain">
         {[...Array(20)].map((_, i) => (

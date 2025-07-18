@@ -8,7 +8,7 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ darkMode }) => {
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-black relative overflow-hidden">
+    <section id="about" className="py-20 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 cyber-grid opacity-20"></div>
       <div className="absolute inset-0 circuit-pattern opacity-10"></div>

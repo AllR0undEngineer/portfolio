@@ -63,7 +63,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-black relative overflow-hidden">
+    <section id="projects" className="py-20 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 cyber-grid opacity-20"></div>
       <div className="absolute inset-0 circuit-pattern opacity-15"></div>

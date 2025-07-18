@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode }) => {
   ];
 
   return (
-    <footer className={`py-12 ${darkMode ? 'bg-gray-900 border-gray-800' : 'bg-gray-900 border-gray-800'} border-t`}>
+    <footer className="py-12 border-t border-gray-800/30 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center space-y-6">
           {/* Logo/Name */}
