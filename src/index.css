@@ -30,16 +30,16 @@
 
 /* Light mode variables */
 .light {
-  --dark-bg: var(--emerald-50);
-  --darker-bg: #ffffff;
-  --card-bg: rgba(255, 255, 255, 0.9);
+  --dark-bg: var(--emerald-400);
+  --darker-bg: var(--emerald-500);
+  --card-bg: rgba(132, 169, 140, 0.9);
   --border-glow: var(--emerald-400);
-  --text-primary: var(--emerald-800);
-  --text-secondary: var(--emerald-600);
-  --text-accent: var(--emerald-500);
-  --text-muted: var(--emerald-400);
-  --bg-gradient-from: var(--emerald-50);
-  --bg-gradient-to: var(--emerald-100);
+  --text-primary: #ffffff;
+  --text-secondary: var(--emerald-100);
+  --text-accent: var(--emerald-200);
+  --text-muted: var(--emerald-300);
+  --bg-gradient-from: var(--emerald-400);
+  --bg-gradient-to: var(--emerald-500);
 }
 
 /* Dark mode variables */

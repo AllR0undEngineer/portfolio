@@ -77,7 +77,7 @@ function App() {
     <div className={`min-h-screen relative overflow-hidden transition-all duration-300 ${
       darkMode 
         ? 'bg-gradient-to-br from-slate-800 via-slate-900 to-emerald-900 text-white' 
-        : 'bg-gradient-to-br from-slate-100 via-white to-emerald-100 text-slate-800'
+        : 'bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-600 text-white'
     }`}>
       {/* Unified Background with Cyber Grid */}
       <div className="fixed inset-0 cyber-grid opacity-30 pointer-events-none z-0"></div>
@@ -106,7 +106,7 @@ function App() {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md border-b cyber-card relative ${
         darkMode 
           ? 'bg-slate-900/90 border-emerald-400/30' 
-          : 'bg-white/90 border-emerald-600/30'
+          : 'bg-emerald-400/90 border-emerald-200/30'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -141,7 +141,7 @@ function App() {
                 className={`flex items-center space-x-2 px-3 py-2 xl:px-4 text-sm rounded-lg font-semibold transition-all duration-300 ${
                   darkMode 
                     ? 'bg-emerald-600 hover:bg-emerald-700 text-white' 
-                    : 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                    : 'bg-emerald-700 hover:bg-emerald-800 text-white'
                 }`}
               >
                 <Download className="w-3 h-3 xl:w-4 xl:h-4" />
@@ -152,7 +152,7 @@ function App() {
                 className={`p-2 rounded-lg transition-colors duration-300 ${
                   darkMode 
                     ? 'bg-emerald-800/50 text-yellow-400 hover:text-yellow-300' 
-                    : 'bg-emerald-100/50 text-orange-500 hover:text-orange-600'
+                    : 'bg-emerald-600/50 text-yellow-300 hover:text-yellow-200'
                 }`}
               >
                 {darkMode ? <Sun className="w-4 h-4 xl:w-5 xl:h-5" /> : <Moon className="w-4 h-4 xl:w-5 xl:h-5" />}
@@ -166,7 +166,7 @@ function App() {
                 className={`p-2 rounded-lg transition-colors duration-300 ${
                   darkMode 
                     ? 'bg-gray-800/50 text-yellow-400 hover:text-yellow-300' 
-                    : 'bg-gray-200/50 text-orange-500 hover:text-orange-600'
+                    : 'bg-emerald-600/50 text-yellow-300 hover:text-yellow-200'
                 }`}
               >
                 {darkMode ? <Sun className="w-4 h-4 sm:w-5 sm:h-5" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
@@ -176,7 +176,7 @@ function App() {
                 className={`p-2 rounded-lg ${
                   darkMode 
                     ? 'bg-gray-800/50 text-emerald-400' 
-                    : 'bg-gray-200/50 text-emerald-600'
+                    : 'bg-emerald-600/50 text-white'
                 }`}
               >
                 {isMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5" />}
@@ -190,7 +190,7 @@ function App() {
           <div className={`lg:hidden border-t backdrop-blur-sm ${
             darkMode 
               ? 'bg-emerald-900/95 border-emerald-400/30' 
-              : 'bg-white/95 border-emerald-500/30'
+              : 'bg-emerald-400/95 border-emerald-200/30'
           }`}>
             <div className="px-3 pt-3 pb-4 space-y-2 sm:px-4">
               {navItems.map((item) => (
@@ -200,7 +200,7 @@ function App() {
                   className={`block w-full text-left px-3 py-2.5 text-base font-medium font-mono rounded-md transition-colors duration-300 uppercase tracking-wider ${
                     activeSection === item.id
                       ? (darkMode ? 'text-emerald-300 bg-emerald-800/30' : 'text-emerald-600 bg-emerald-100/50')
-                      : (darkMode ? 'text-emerald-200 hover:text-emerald-300' : 'text-emerald-700 hover:text-emerald-600')
+                      : (darkMode ? 'text-emerald-200 hover:text-emerald-300' : 'text-white hover:text-emerald-100')
                   }`}
                 >
                   {item.label}
@@ -208,7 +208,7 @@ function App() {
               ))}
               <button
                 onClick={() => window.open('/src/assets/resumemain(1).pdf', '_blank')}
-                className="bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center space-x-2 w-full px-3 py-2.5 rounded-md transition-all duration-300 mt-3 font-semibold"
+                className="bg-emerald-700 hover:bg-emerald-800 text-white flex items-center justify-center space-x-2 w-full px-3 py-2.5 rounded-md transition-all duration-300 mt-3 font-semibold"
               >
                 <Download className="w-4 h-4" />
                 <span>Resume</span>
