@@ -6,41 +6,54 @@
 
 /* Professional Theme Adjustments */
 :root {
+  /* Base colors from 84a98c palette */
+  --emerald-50: #f0f9f4;
+  --emerald-100: #dcfce7;
+  --emerald-200: #bbf7d0;
+  --emerald-300: #86efac;
+  --emerald-400: #84a98c;
+  --emerald-500: #52796f;
+  --emerald-600: #354f52;
+  --emerald-700: #2f3e46;
+  --emerald-800: #1e2a32;
+  --emerald-900: #0f1419;
+  
+  /* Neon colors based on palette */
   --neon-cyan: #84a98c;
   --neon-pink: #a8c09a;
   --neon-green: #84a98c;
-  --neon-purple: #a8c09a;
+  --neon-purple: #52796f;
   --neon-orange: #cad2c5;
   --neon-blue: #84a98c;
   --neon-yellow: #cad2c5;
-  --dark-bg: #2f3e46;
-  --darker-bg: #1e2a32;
-  --card-bg: #354f52;
-  --border-glow: #52796f;
-  --light-bg: #f2f3f4;
-  --light-card-bg: #ffffff;
-  --light-text: #2f3e46;
-  --light-border: #84a98c;
 }
 
 /* Light mode variables */
 .light {
-  --dark-bg: #f2f3f4;
+  --dark-bg: var(--emerald-50);
   --darker-bg: #ffffff;
-  --card-bg: #ffffff;
-  --border-glow: #84a98c;
-  --text-primary: #2f3e46;
-  --text-secondary: #52796f;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --border-glow: var(--emerald-400);
+  --text-primary: var(--emerald-800);
+  --text-secondary: var(--emerald-600);
+  --text-accent: var(--emerald-500);
+  --text-muted: var(--emerald-400);
+  --bg-gradient-from: var(--emerald-50);
+  --bg-gradient-to: var(--emerald-100);
 }
 
 /* Dark mode variables */
 .dark {
-  --dark-bg: #2f3e46;
-  --darker-bg: #1e2a32;
-  --card-bg: #354f52;
-  --border-glow: #52796f;
-  --text-primary: #f2f3f4;
-  --text-secondary: #cad2c5;
+  --dark-bg: var(--emerald-800);
+  --darker-bg: var(--emerald-900);
+  --card-bg: rgba(47, 62, 70, 0.9);
+  --border-glow: var(--emerald-400);
+  --text-primary: var(--emerald-50);
+  --text-secondary: var(--emerald-200);
+  --text-accent: var(--emerald-300);
+  --text-muted: var(--emerald-400);
+  --bg-gradient-from: var(--emerald-800);
+  --bg-gradient-to: var(--emerald-900);
 }
 
 /* Base theme */

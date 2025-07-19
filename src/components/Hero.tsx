@@ -262,13 +262,13 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                   {/* Central Avatar Image */}
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div 
-                      className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full p-1 sm:p-1.5 md:p-2 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300 neon-glow-cyan cyber-card overflow-hidden"
+                      className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full p-1 sm:p-1.5 md:p-2 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300 neon-glow-cyan cyber-card overflow-hidden"
                       onClick={() => scrollToSection('home')}
                     >
                       <img 
-                        src="/src/assets/WhatsApp Image 2025-07-07 at 17.51.08_8cd13dd1.jpg"
+                        src="/src/assets/avatar-removebg-preview.png"
                         alt="Priyansh Chandwani"
-                        className="w-full h-full object-cover rounded-full border-2 border-cyan-400"
+                        className="w-full h-full object-cover rounded-full border-2 border-emerald-400"
                       />
                     </div>
                   </div>

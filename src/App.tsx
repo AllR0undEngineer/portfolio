@@ -126,19 +126,23 @@ function App() {
                   onClick={() => scrollToSection(item.id)}
                   className={`relative px-2 py-2 xl:px-3 text-sm font-medium font-mono transition-colors duration-300 uppercase tracking-wider ${
                     activeSection === item.id
-                      ? (darkMode ? 'text-emerald-400' : 'text-emerald-600')
-                      : (darkMode ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-600 hover:text-emerald-600')
+                      ? (darkMode ? 'text-emerald-300' : 'text-emerald-600')
+                      : (darkMode ? 'text-emerald-200 hover:text-emerald-300' : 'text-emerald-700 hover:text-emerald-600')
                   }`}
                 >
                   {item.label}
                   {activeSection === item.id && (
-                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-600 rounded-full"></div>
+                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-full"></div>
                   )}
                 </button>
               ))}
               <button
                 onClick={() => window.open('#', '_blank')}
-                className="bg-emerald-600 hover:bg-emerald-700 text-white flex items-center space-x-2 px-3 py-2 xl:px-4 text-sm rounded-lg font-semibold transition-all duration-300"
+                className={`flex items-center space-x-2 px-3 py-2 xl:px-4 text-sm rounded-lg font-semibold transition-all duration-300 ${
+                  darkMode 
+                    ? 'bg-emerald-600 hover:bg-emerald-700 text-white' 
+                    : 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                }`}
               >
                 <Download className="w-3 h-3 xl:w-4 xl:h-4" />
                 <span>Resume</span>
@@ -147,8 +151,8 @@ function App() {
                 onClick={toggleDarkMode}
                 className={`p-2 rounded-lg transition-colors duration-300 ${
                   darkMode 
-                    ? 'bg-gray-800/50 text-yellow-400 hover:text-yellow-300' 
-                    : 'bg-gray-200/50 text-orange-500 hover:text-orange-600'
+                    ? 'bg-emerald-800/50 text-yellow-400 hover:text-yellow-300' 
+                    : 'bg-emerald-100/50 text-orange-500 hover:text-orange-600'
                 }`}
               >
                 {darkMode ? <Sun className="w-4 h-4 xl:w-5 xl:h-5" /> : <Moon className="w-4 h-4 xl:w-5 xl:h-5" />}
@@ -185,8 +189,8 @@ function App() {
         {isMenuOpen && (
           <div className={`lg:hidden border-t backdrop-blur-sm ${
             darkMode 
-              ? 'bg-slate-900/95 border-emerald-400/30 bg-white/5' 
-              : 'bg-white/95 border-emerald-600/30 bg-slate-900/5'
+              ? 'bg-emerald-900/95 border-emerald-400/30' 
+              : 'bg-white/95 border-emerald-500/30'
           }`}>
             <div className="px-3 pt-3 pb-4 space-y-2 sm:px-4">
               {navItems.map((item) => (
@@ -195,8 +199,8 @@ function App() {
                   onClick={() => scrollToSection(item.id)}
                   className={`block w-full text-left px-3 py-2.5 text-base font-medium font-mono rounded-md transition-colors duration-300 uppercase tracking-wider ${
                     activeSection === item.id
-                      ? (darkMode ? 'text-emerald-400 bg-emerald-900/20' : 'text-emerald-600 bg-emerald-100/20')
-                      : (darkMode ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-600 hover:text-emerald-600')
+                      ? (darkMode ? 'text-emerald-300 bg-emerald-800/30' : 'text-emerald-600 bg-emerald-100/50')
+                      : (darkMode ? 'text-emerald-200 hover:text-emerald-300' : 'text-emerald-700 hover:text-emerald-600')
                   }`}
                 >
                   {item.label}
@@ -231,7 +235,7 @@ function App() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-50 p-2.5 sm:p-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full shadow-lg hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-110"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-50 p-2.5 sm:p-3 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-full shadow-lg hover:from-emerald-700 hover:to-emerald-800 transition-all duration-300 transform hover:scale-110"
         >
           <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>

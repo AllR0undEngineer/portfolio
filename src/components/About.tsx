@@ -67,74 +67,74 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
                 <div className="bg-white/5 backdrop-blur-sm border border-gray-600/30 rounded-xl p-6 shadow-xl relative overflow-hidden">
                   <div className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                      <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center shadow-lg">
                         <Heart className="w-6 h-6 text-white" />
                       </div>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg sm:text-xl font-bold text-blue-400 mb-2">
+                      <h3 className="text-lg sm:text-xl font-bold text-emerald-400 mb-2">
                         My Passion
                       </h3>
-                      <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                        Bridging the gap between <span className="text-blue-400">development</span> and 
-                        <span className="text-purple-400"> operations</span>, creating seamless ML pipelines that 
-                        scale from prototype to <span className="text-green-400">production</span>.
+                      <p className="text-sm sm:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                        Bridging the gap between <span className="text-emerald-400">development</span> and 
+                        <span className="text-emerald-500"> operations</span>, creating seamless ML pipelines that 
+                        scale from prototype to <span className="text-emerald-300">production</span>.
                       </p>
                     </div>
                   </div>
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-blue-400/20 to-transparent rounded-bl-full"></div>
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-emerald-400/20 to-transparent rounded-bl-full"></div>
                 </div>
 
                 {/* Mission Section */}
                 <div className="bg-white/5 backdrop-blur-sm border border-gray-600/30 rounded-xl p-6 shadow-xl relative overflow-hidden">
                   <div className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-lg">
+                      <div className="w-12 h-12 bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-full flex items-center justify-center shadow-lg">
                         <Target className="w-6 h-6 text-white" />
                       </div>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg sm:text-xl font-bold text-orange-400 mb-2">
+                      <h3 className="text-lg sm:text-xl font-bold text-emerald-500 mb-2">
                         My Mission
                       </h3>
-                      <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                        To architect <span className="text-green-400">innovative AI solutions</span> that create 
-                        real-world impact, while maintaining <span className="text-blue-400">robust, scalable 
+                      <p className="text-sm sm:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                        To architect <span className="text-emerald-300">innovative AI solutions</span> that create 
+                        real-world impact, while maintaining <span className="text-emerald-400">robust, scalable 
                         infrastructure</span> that developers and businesses can rely on.
                       </p>
                     </div>
                   </div>
-                  <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-orange-400/20 to-transparent rounded-tr-full"></div>
+                  <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-emerald-500/20 to-transparent rounded-tr-full"></div>
                 </div>
               </div>
 
               {/* Technical Overview */}
               <div className="bg-white/5 backdrop-blur-sm border border-gray-600/30 rounded-xl p-6 shadow-xl relative">
                 <div className="text-gray-400 mb-4">
-                  <span className="text-green-400">Technical Overview</span>
+                  <span className="text-emerald-400">Technical Overview</span>
                 </div>
-                <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-300">
-                  <span className="text-blue-400">Core Skills:</span> Full-stack development + Operations expertise<br/>
-                  <span className="text-purple-400">Specialization:</span> End-to-end ML pipeline automation<br/>
-                  <span className="text-green-400">Capabilities:</span> Frontend interfaces → Backend systems → ML deployment<br/>
-                  <span className="text-blue-400">Infrastructure:</span> Containerization • Orchestration • Cloud platforms
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                  <span className="text-emerald-400">Core Skills:</span> Full-stack development + Operations expertise<br/>
+                  <span className="text-emerald-500">Specialization:</span> End-to-end ML pipeline automation<br/>
+                  <span className="text-emerald-300">Capabilities:</span> Frontend interfaces → Backend systems → ML deployment<br/>
+                  <span className="text-emerald-400">Infrastructure:</span> Containerization • Orchestration • Cloud platforms
                 </p>
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
               </div>
 
               {/* Personal Info */}
-              <div className="bg-white/5 backdrop-blur-sm border-2 border-green-400/50 rounded-xl p-6 shadow-xl relative overflow-hidden">
+              <div className="bg-white/5 backdrop-blur-sm border-2 border-emerald-400/50 rounded-xl p-6 shadow-xl relative overflow-hidden">
                 <div className="text-gray-400 mb-4">
-                  <span className="text-green-400">Personal Background</span>
+                  <span className="text-emerald-400">Personal Background</span>
                 </div>
-                <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-300">
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                   When not coding, you'll find me exploring the latest 
-                  <span className="text-blue-400"> developments</span> in AI and machine learning, 
-                  contributing to <span className="text-purple-400">open-source projects</span>, or 
-                  experimenting with <span className="text-green-400">emerging technologies</span>. 
+                  <span className="text-emerald-400"> developments</span> in AI and machine learning, 
+                  contributing to <span className="text-emerald-500">open-source projects</span>, or 
+                  experimenting with <span className="text-emerald-300">emerging technologies</span>. 
                   Continuous learning and staying current with technology trends is my priority.
                 </p>
-                <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent animate-pulse"></div>
+                <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent animate-pulse"></div>
               </div>
 
               {/* Activity Status */}
