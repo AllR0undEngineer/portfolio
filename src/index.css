@@ -6,17 +6,49 @@
 
 /* Professional Theme Adjustments */
 :root {
-  --neon-cyan: #3b82f6;
-  --neon-pink: #8b5cf6;
-  --neon-green: #10b981;
-  --neon-purple: #8b5cf6;
-  --neon-orange: #f59e0b;
-  --neon-blue: #3b82f6;
-  --neon-yellow: #fbbf24;
-  --dark-bg: #0f1419;
-  --darker-bg: #0a0e13;
-  --card-bg: #1e2328;
-  --border-glow: #2d3748;
+  --neon-cyan: #84a98c;
+  --neon-pink: #a8c09a;
+  --neon-green: #84a98c;
+  --neon-purple: #a8c09a;
+  --neon-orange: #cad2c5;
+  --neon-blue: #84a98c;
+  --neon-yellow: #cad2c5;
+  --dark-bg: #2f3e46;
+  --darker-bg: #1e2a32;
+  --card-bg: #354f52;
+  --border-glow: #52796f;
+  --light-bg: #f2f3f4;
+  --light-card-bg: #ffffff;
+  --light-text: #2f3e46;
+  --light-border: #84a98c;
+}
+
+/* Light mode variables */
+.light {
+  --dark-bg: #f2f3f4;
+  --darker-bg: #ffffff;
+  --card-bg: #ffffff;
+  --border-glow: #84a98c;
+  --text-primary: #2f3e46;
+  --text-secondary: #52796f;
+}
+
+/* Dark mode variables */
+.dark {
+  --dark-bg: #2f3e46;
+  --darker-bg: #1e2a32;
+  --card-bg: #354f52;
+  --border-glow: #52796f;
+  --text-primary: #f2f3f4;
+  --text-secondary: #cad2c5;
+}
+
+/* Base theme */
+body {
+  background: var(--dark-bg);
+  color: var(--text-primary, #ffffff);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom Neon Colors */
@@ -104,6 +136,37 @@
 @keyframes cyber-grid-move {
   0% { background-position: 0 0, 0 0, 0 0, 0 0; }
   100% { background-position: 50px 50px, 50px 50px, 100px 100px, 100px 100px; }
+}
+
+/* Orbital animations for navigation points */
+@keyframes orbit-about {
+  0% { transform: rotate(0deg) translateX(160px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(160px) rotate(-360deg); }
+}
+
+@keyframes orbit-skills {
+  0% { transform: rotate(60deg) translateX(160px) rotate(-60deg); }
+  100% { transform: rotate(420deg) translateX(160px) rotate(-420deg); }
+}
+
+@keyframes orbit-projects {
+  0% { transform: rotate(120deg) translateX(160px) rotate(-120deg); }
+  100% { transform: rotate(480deg) translateX(160px) rotate(-480deg); }
+}
+
+@keyframes orbit-experience {
+  0% { transform: rotate(180deg) translateX(160px) rotate(-180deg); }
+  100% { transform: rotate(540deg) translateX(160px) rotate(-540deg); }
+}
+
+@keyframes orbit-achievements {
+  0% { transform: rotate(240deg) translateX(160px) rotate(-240deg); }
+  100% { transform: rotate(600deg) translateX(160px) rotate(-600deg); }
+}
+
+@keyframes orbit-contact {
+  0% { transform: rotate(300deg) translateX(160px) rotate(-300deg); }
+  100% { transform: rotate(660deg) translateX(160px) rotate(-660deg); }
 }
 
 /* Enhanced Holographic Effects */
@@ -666,13 +729,6 @@
   .neon-glow-orange {
     box-shadow: 0 2px 8px currentColor40;
   }
-}
-
-/* Base theme */
-body {
-  background: var(--dark-bg);
-  color: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* Smooth transitions */

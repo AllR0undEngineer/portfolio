@@ -259,15 +259,17 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                     ))}
                   </div>
 
-                  {/* Central Core */}
+                  {/* Central Avatar Image */}
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div 
-                      className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full p-1 sm:p-1.5 md:p-2 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300 neon-glow-cyan cyber-card"
+                      className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full p-1 sm:p-1.5 md:p-2 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300 neon-glow-cyan cyber-card overflow-hidden"
                       onClick={() => scrollToSection('home')}
                     >
-                    <div className="w-full h-full bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                      P
-                    </div>
+                      <img 
+                        src="/src/assets/WhatsApp Image 2025-07-07 at 17.51.08_8cd13dd1.jpg"
+                        alt="Priyansh Chandwani"
+                        className="w-full h-full object-cover rounded-full border-2 border-cyan-400"
+                      />
                     </div>
                   </div>
                 </div>
@@ -277,7 +279,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                   <div
                     key={point.id}
                     className="absolute cursor-pointer group z-10"
-                    style={getPointPosition(point.angle, window.innerWidth < 640 ? 80 : window.innerWidth < 768 ? 110 : point.radius)}
+                    style={getPointPosition(point.angle, window.innerWidth < 640 ? 90 : window.innerWidth < 768 ? 120 : point.radius + 20)}
                     onClick={() => scrollToSection(point.id)}
                     onMouseEnter={() => setHoveredPoint(point.id)}
                     onMouseLeave={() => setHoveredPoint(null)}
@@ -288,7 +290,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                         background: `linear-gradient(45deg, ${point.color}, ${point.color}cc)`,
                         boxShadow: `0 4px 15px ${point.color}40`,
                         border: `2px solid ${point.color}`,
-                        animation: `float 3s ease-in-out infinite`,
+                        animation: `orbit-${point.id} 20s linear infinite, float 3s ease-in-out infinite`,
                         animationDelay: `${index * 0.5}s`
                       }}
                     >

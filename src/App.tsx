@@ -16,6 +16,15 @@ function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
+    // Apply theme to document
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
+  useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'skills', 'projects', 'experience', 'achievements', 'contact'];
       const scrollPosition = window.scrollY + 100;
@@ -65,7 +74,11 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-purple-900 text-white relative overflow-hidden">
+    <div className={`min-h-screen relative overflow-hidden transition-all duration-300 ${
+      darkMode 
+        ? 'bg-gradient-to-br from-slate-800 via-slate-900 to-emerald-900 text-white' 
+        : 'bg-gradient-to-br from-slate-100 via-white to-emerald-100 text-slate-800'
+    }`}>
       {/* Unified Background with Cyber Grid */}
       <div className="fixed inset-0 cyber-grid opacity-30 pointer-events-none z-0"></div>
       
@@ -80,7 +93,7 @@ function App() {
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 6}s`,
               animationDuration: `${4 + Math.random() * 4}s`,
-              background: i % 4 === 0 ? '#00ffff' : i % 4 === 1 ? '#ff00ff' : i % 4 === 2 ? '#00ff00' : '#ff8000'
+              background: i % 4 === 0 ? '#84a98c' : i % 4 === 1 ? '#a8c09a' : i % 4 === 2 ? '#cad2c5' : '#52796f'
             }}
           />
         ))}
@@ -90,12 +103,16 @@ function App() {
       <div className="scan-lines fixed inset-0 pointer-events-none z-20"></div>
       
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/90 backdrop-blur-md border-b border-cyan-400/30 cyber-card relative">
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md border-b cyber-card relative ${
+        darkMode 
+          ? 'bg-slate-900/90 border-emerald-400/30' 
+          : 'bg-white/90 border-emerald-600/30'
+      }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex items-center space-x-3">
-                <div className="w-24 h-16 sm:w-28 sm:h-18 md:w-32 md:h-20 lg:w-36 lg:h-22 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-xl transition-all duration-300 shadow-lg">
+                <div className="w-24 h-16 sm:w-28 sm:h-18 md:w-32 md:h-20 lg:w-36 lg:h-22 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center text-white font-bold text-xl transition-all duration-300 shadow-lg">
                   PC
                 </div>
               </div>
@@ -109,28 +126,32 @@ function App() {
                   onClick={() => scrollToSection(item.id)}
                   className={`relative px-2 py-2 xl:px-3 text-sm font-medium font-mono transition-colors duration-300 uppercase tracking-wider ${
                     activeSection === item.id
-                      ? 'text-blue-400'
-                      : 'text-gray-300 hover:text-blue-400'
+                      ? (darkMode ? 'text-emerald-400' : 'text-emerald-600')
+                      : (darkMode ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-600 hover:text-emerald-600')
                   }`}
                 >
                   {item.label}
                   {activeSection === item.id && (
-                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full"></div>
+                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-600 rounded-full"></div>
                   )}
                 </button>
               ))}
               <button
                 onClick={() => window.open('#', '_blank')}
-                className="bg-blue-600 hover:bg-blue-700 text-white flex items-center space-x-2 px-3 py-2 xl:px-4 text-sm rounded-lg font-semibold transition-all duration-300"
+                className="bg-emerald-600 hover:bg-emerald-700 text-white flex items-center space-x-2 px-3 py-2 xl:px-4 text-sm rounded-lg font-semibold transition-all duration-300"
               >
                 <Download className="w-3 h-3 xl:w-4 xl:h-4" />
                 <span>Resume</span>
               </button>
               <button
                 onClick={toggleDarkMode}
-                className="p-2 rounded-lg transition-colors duration-300 bg-gray-800/50 text-yellow-400 hover:text-yellow-300"
+                className={`p-2 rounded-lg transition-colors duration-300 ${
+                  darkMode 
+                    ? 'bg-gray-800/50 text-yellow-400 hover:text-yellow-300' 
+                    : 'bg-gray-200/50 text-orange-500 hover:text-orange-600'
+                }`}
               >
-                <Sun className="w-4 h-4 xl:w-5 xl:h-5" />
+                {darkMode ? <Sun className="w-4 h-4 xl:w-5 xl:h-5" /> : <Moon className="w-4 h-4 xl:w-5 xl:h-5" />}
               </button>
             </div>
 
@@ -138,13 +159,21 @@ function App() {
             <div className="lg:hidden flex items-center space-x-3 sm:space-x-4">
               <button
                 onClick={toggleDarkMode}
-                className="p-2 rounded-lg transition-colors duration-300 bg-gray-800/50 text-yellow-400 hover:text-yellow-300"
+                className={`p-2 rounded-lg transition-colors duration-300 ${
+                  darkMode 
+                    ? 'bg-gray-800/50 text-yellow-400 hover:text-yellow-300' 
+                    : 'bg-gray-200/50 text-orange-500 hover:text-orange-600'
+                }`}
               >
-                <Sun className="w-4 h-4 sm:w-5 sm:h-5" />
+                {darkMode ? <Sun className="w-4 h-4 sm:w-5 sm:h-5" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
               </button>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-lg bg-gray-800/50 text-blue-400"
+                className={`p-2 rounded-lg ${
+                  darkMode 
+                    ? 'bg-gray-800/50 text-emerald-400' 
+                    : 'bg-gray-200/50 text-emerald-600'
+                }`}
               >
                 {isMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5" />}
               </button>
@@ -154,7 +183,11 @@ function App() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-black/95 border-t border-blue-400/30 bg-white/5 backdrop-blur-sm">
+          <div className={`lg:hidden border-t backdrop-blur-sm ${
+            darkMode 
+              ? 'bg-slate-900/95 border-emerald-400/30 bg-white/5' 
+              : 'bg-white/95 border-emerald-600/30 bg-slate-900/5'
+          }`}>
             <div className="px-3 pt-3 pb-4 space-y-2 sm:px-4">
               {navItems.map((item) => (
                 <button
@@ -162,8 +195,8 @@ function App() {
                   onClick={() => scrollToSection(item.id)}
                   className={`block w-full text-left px-3 py-2.5 text-base font-medium font-mono rounded-md transition-colors duration-300 uppercase tracking-wider ${
                     activeSection === item.id
-                      ? 'text-blue-400 bg-blue-900/20'
-                      : 'text-gray-300 hover:text-blue-400'
+                      ? (darkMode ? 'text-emerald-400 bg-emerald-900/20' : 'text-emerald-600 bg-emerald-100/20')
+                      : (darkMode ? 'text-gray-300 hover:text-emerald-400' : 'text-gray-600 hover:text-emerald-600')
                   }`}
                 >
                   {item.label}
@@ -171,7 +204,7 @@ function App() {
               ))}
               <button
                 onClick={() => window.open('/src/assets/resumemain(1).pdf', '_blank')}
-                className="bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center space-x-2 w-full px-3 py-2.5 rounded-md transition-all duration-300 mt-3 font-semibold"
+                className="bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center space-x-2 w-full px-3 py-2.5 rounded-md transition-all duration-300 mt-3 font-semibold"
               >
                 <Download className="w-4 h-4" />
                 <span>Resume</span>
@@ -183,22 +216,22 @@ function App() {
 
       {/* Main Content */}
       <main className="pt-16">
-        <Hero darkMode={true} />
-        <About darkMode={true} />
-        <Skills darkMode={true} />
-        <Projects darkMode={true} />
-        <Experience darkMode={true} />
-        <Achievements darkMode={true} />
-        <Contact darkMode={true} />
+        <Hero darkMode={darkMode} />
+        <About darkMode={darkMode} />
+        <Skills darkMode={darkMode} />
+        <Projects darkMode={darkMode} />
+        <Experience darkMode={darkMode} />
+        <Achievements darkMode={darkMode} />
+        <Contact darkMode={darkMode} />
       </main>
 
-      <Footer darkMode={true} />
+      <Footer darkMode={darkMode} />
 
       {/* Scroll to Top Button */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-50 p-2.5 sm:p-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-110"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-50 p-2.5 sm:p-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full shadow-lg hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-110"
         >
           <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
