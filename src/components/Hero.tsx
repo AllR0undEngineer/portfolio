@@ -262,14 +262,16 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                   {/* Central Avatar Image */}
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div 
-                      className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full p-1 sm:p-1.5 md:p-2 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300 neon-glow-cyan cyber-card overflow-hidden"
+                      className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full p-1 sm:p-1.5 md:p-2 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300 neon-glow-cyan cyber-card overflow-hidden relative"
                       onClick={() => scrollToSection('home')}
                     >
                       <img 
-                        src="/src/assets/avatar-removebg-preview.png"
+                        src="/src/assets/avatar-removebg-preview copy copy copy.png"
                         alt="Priyansh Chandwani"
-                        className="w-full h-full object-cover rounded-full border-2 border-emerald-400"
+                        className="w-full h-full object-cover rounded-full border-2 border-emerald-400 relative z-10"
                       />
+                      {/* Avatar Glow Effect */}
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-magenta-400/20 animate-pulse"></div>
                     </div>
                   </div>
                 </div>
@@ -278,19 +280,29 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                 {navigationPoints.map((point, index) => (
                   <div
                     key={point.id}
-                    className="absolute cursor-pointer group z-10"
+                    className="absolute cursor-pointer group z-10 orbital-icon"
                     style={getPointPosition(point.angle, window.innerWidth < 640 ? 90 : window.innerWidth < 768 ? 120 : point.radius + 20)}
                     onClick={() => scrollToSection(point.id)}
                     onMouseEnter={() => setHoveredPoint(point.id)}
                     onMouseLeave={() => setHoveredPoint(null)}
                   >
+                    {/* Light Trail Effect */}
                     <div 
-                      className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 group-hover:scale-125 transform hover:rotate-12 cyber-card"
+                      className="absolute inset-0 rounded-full opacity-30 group-hover:opacity-60 transition-opacity duration-300 motion-blur"
+                      style={{
+                        background: `radial-gradient(ellipse 200% 50%, ${point.color}40 0%, transparent 70%)`,
+                        transform: 'rotate(-45deg) scale(2, 0.5)',
+                        filter: 'blur(2px)'
+                      }}
+                    ></div>
+                    
+                    <div 
+                      className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white transition-all duration-300 group-hover:scale-125 transform hover:rotate-12 cyber-card relative z-10"
                       style={{
                         background: `linear-gradient(45deg, ${point.color}, ${point.color}cc)`,
                         boxShadow: `0 4px 15px ${point.color}40`,
                         border: `2px solid ${point.color}`,
-                        animation: `orbit-${point.id} 20s linear infinite, float 3s ease-in-out infinite`,
+                        animation: `orbital-motion 20s linear infinite, float 3s ease-in-out infinite`,
                         animationDelay: `${index * 0.5}s`
                       }}
                     >
@@ -301,6 +313,11 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                       </div>
                     </div>
                     
+                    {/* Orbital Path Indicator */}
+                    <div className="absolute inset-0 rounded-full border border-gray-600/20 pointer-events-none"
+                         style={{ width: '300%', height: '300%', left: '-100%', top: '-100%' }}>
+                    </div>
+                    
                     {/* Holographic Label */}
                     <div className={`absolute -bottom-12 sm:-bottom-14 md:-bottom-16 left-1/2 transform -translate-x-1/2 transition-all duration-300 ${
                       hoveredPoint === point.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
@@ -309,7 +326,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                            style={{ 
                              borderColor: point.color,
                              color: point.color,
-                             textShadow: `0 0 5px ${point.color}40`
+                             textShadow: `0 0 5px ${point.color}40, 0 0 10px ${point.color}20`
                            }}
                     >
                         {point.label}
@@ -319,7 +336,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                     </div>
 
                     {/* Energy Pulse */}
-                    <div className="absolute inset-0 rounded-full opacity-0 group-active:opacity-50 group-active:animate-ping"
+                    <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-30 group-hover:animate-ping transition-opacity duration-300"
                          style={{ background: point.color }}></div>
                     
                     {/* Hover Aura */}
@@ -329,21 +346,44 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                 ))}
 
                 {/* Orbital Data Streams */}
-                <div 
-                  className="absolute inset-0 rounded-full border border-cyan-400/20 data-stream"
-                  style={{ transform: `rotate(${globeRotation}deg)` }}
-                ></div>
-                <div 
-                  className="absolute inset-4 rounded-full border border-pink-400/20 data-stream"
-                  style={{ transform: `rotate(${-globeRotation * 0.7}deg)` }}
-                ></div>
-                <div 
-                  className="absolute inset-12 rounded-full border border-green-400/20 data-stream"
-                  style={{ transform: `rotate(${globeRotation * 0.5}deg)` }}
-                ></div>
+                <div className="absolute inset-0 pointer-events-none">
+                  <div 
+                    className="absolute inset-0 rounded-full border border-cyan-400/20 data-stream orbital-ring"
+                    style={{ transform: `rotate(${globeRotation}deg)` }}
+                  ></div>
+                  <div 
+                    className="absolute inset-4 rounded-full border border-magenta-400/20 data-stream orbital-ring"
+                    style={{ transform: `rotate(${-globeRotation * 0.7}deg)` }}
+                  ></div>
+                  <div 
+                    className="absolute inset-8 rounded-full border border-purple-400/20 data-stream orbital-ring"
+                    style={{ transform: `rotate(${globeRotation * 0.5}deg)` }}
+                  ></div>
+                  <div 
+                    className="absolute inset-12 rounded-full border border-blue-400/20 data-stream orbital-ring"
+                    style={{ transform: `rotate(${-globeRotation * 0.3}deg)` }}
+                  ></div>
+                </div>
+
+                {/* Floating Digital Particles */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                  {[...Array(12)].map((_, i) => (
+                    <div
+                      key={`orbit-particle-${i}`}
+                      className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-60"
+                      style={{
+                        left: `${20 + (i * 7)}%`,
+                        top: `${30 + (i * 5)}%`,
+                        animation: `particle-drift ${4 + (i % 3)}s ease-in-out infinite`,
+                        animationDelay: `${i * 0.3}s`,
+                        boxShadow: `0 0 4px currentColor`
+                      }}
+                    />
+                  ))}
+                </div>
 
                 {/* Outer Energy Ring */}
-                <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-cyan-600/10 via-purple-600/10 to-pink-600/10 blur-2xl animate-pulse"></div>
+                <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-cyan-600/10 via-purple-600/10 to-magenta-600/10 blur-2xl animate-pulse energy-field-enhanced"></div>
               </div>
 
               {/* System Status */}
@@ -375,6 +415,18 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
           10% { opacity: 1; }
           90% { opacity: 1; }
           100% { transform: translateY(100vh); opacity: 0; }
+        }
+        
+        @keyframes orbital-motion {
+          0% { transform: rotate(0deg) translateX(var(--orbit-radius, 160px)) rotate(0deg); }
+          100% { transform: rotate(360deg) translateX(var(--orbit-radius, 160px)) rotate(-360deg); }
+        }
+        
+        @keyframes particle-drift {
+          0%, 100% { transform: translateY(0px) translateX(0px) scale(1); opacity: 0.3; }
+          25% { transform: translateY(-20px) translateX(10px) scale(1.2); opacity: 1; }
+          50% { transform: translateY(-10px) translateX(-10px) scale(0.8); opacity: 0.7; }
+          75% { transform: translateY(-15px) translateX(8px) scale(1.1); opacity: 0.5; }
         }
       `}</style>
     </section>
